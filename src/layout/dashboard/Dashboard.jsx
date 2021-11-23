@@ -8,8 +8,8 @@ const Dashboard = () => {
         <div>
             <Header/>
             <Sidebar/>
+     
             <Home/>
-            
 
         </div>
     )
