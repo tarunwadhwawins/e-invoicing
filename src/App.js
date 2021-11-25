@@ -1,16 +1,22 @@
 // import logo from './logo.svg';
 import './App.css';
-import './assets/scss/style.scss';
+import './assets/scss/app.scss';
 import 'semantic-ui-css/semantic.min.css';
+import {BrowserRouter , Switch,Route} from 'react-router-dom'
+import Routes from './routes/routes'
 // import Signin from './views/signin/Signin'
 // import Home from './views/home/Home';
-import Dashboard from './layout/dashboard/Dashboard';
+import ProfileSetup from './layout/dashboard/DashboardLayout';
+import Login from './views/signin/Signin'
+import Dashboard from './layout/dashboard/DashboardLayout';
+
+
 
 function App() {
   return (
-    <div >
-      <Dashboard/>
-    </div>
+   <BrowserRouter>
+   <Routes/>
+   </BrowserRouter>
   );
 }
 
