@@ -7,6 +7,7 @@ import Profile from '../views/home/Home'
 import Invoices from "../views/invoices/Invoices";
 import Invoice from "../views/invoice-list/Invoice";
 import Login from '../views/signin/Signin'
+import Subscription from "../views/subscription/Subscription";
 
 const Routes = ()=>{
     return  <>
@@ -23,6 +24,7 @@ const DashboardContainer = ({match})=>(
             <Route exact path={`${match.path}/profile`} component={Home}/>
             <Route exact path={`${match.path}/invoices`} component={Invoices}/>
             <Route exact path={`${match.path}/invoice`} component={Invoice}/>
+            <Route exact path={`${match.path}/subscription`} component={Subscription}/>
         </Switch>
     </DashboardLayout>
 )
