@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grid, Header, Form, Button, Icon, Table, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
+import { env } from '../../shared/functional/global-import';
+
 
 
 const Invoice = () => {
@@ -13,7 +15,7 @@ const Invoice = () => {
                 <Form.Input size="large" action={{ icon: 'search' }} placeholder='Search...' fluid />
             </Grid.Column>
             <Grid.Column width={4} textAlign="right">
-                <Button as={Link}  to='/dashboard/invoices' className="btn-secondary"><Icon name="plus" /> Create Invoice</Button>
+                <Button as={Link}  to={`${env.PUBLIC_URL}/dashboard/invoices`} className="btn-secondary"><Icon name="plus" /> Create Invoice</Button>
             </Grid.Column>
             <Grid.Column width={16}>
                 <div className="commonTable">

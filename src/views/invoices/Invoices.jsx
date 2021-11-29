@@ -3,7 +3,10 @@ import { Grid, Header, Accordion, Menu, Form, Button, Table, Input, Select } fro
 import { Link } from 'react-router-dom'
 import './invoices.scss'
 
-const  achOptions = [
+import { env } from '../../shared/functional/global-import';
+
+
+const achOptions = [
     { key: 'Direct deposit ', value: 'Direct deposit ', text: ' Direct Deposit ' },
     { key: 'Direct payment', value: 'Direct payment', text: ' Direct Payment' },
 ]
@@ -54,8 +57,21 @@ const countryOptions = [
     { key: 'bz', value: 'bz', text: 'Belize' },
     { key: 'bj', value: 'bj', text: 'Benin' },
 ]
+
+const initialRows = [1];
+
+
+
+
 const Invoices = () => {
     const [activeIndex, setActiveIndex] = useState(0)
+
+    const [inputRows,setInputRows] = useState(initialRows)
+
+
+
+
+    
 
     const handleClick = (e, titleProps) => {
         const { index } = titleProps
@@ -63,6 +79,12 @@ const Invoices = () => {
 
         setActiveIndex(index)
     }
+
+    const addMoreClick = () => {
+       
+    }
+
+
     const [value, setValue] = useState("");
     const handleChange = (e, { value }) => setValue(value);
     const handleTransactionChange = (e, { value }) => setValue(value);
@@ -150,6 +172,7 @@ const Invoices = () => {
                                         <Form.Input placeholder="Fax" fluid />
                                     </Grid.Column>
                                     <Grid.Column width={16} textAlign="right">
+                                        <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button>
                                         <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>Next</Button>
                                     </Grid.Column>
                                 </Grid>
@@ -208,6 +231,7 @@ const Invoices = () => {
                                         <Form.Input placeholder="Fax" fluid />
                                     </Grid.Column>
                                     <Grid.Column width={16} textAlign="right">
+                                        <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button>
                                         <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>Next</Button>
                                     </Grid.Column>
                                 </Grid>
@@ -228,6 +252,7 @@ const Invoices = () => {
                                         <Form.Select placeholder="Currency" options={currencyOptions} fluid />
                                     </Grid.Column>
                                     <Grid.Column width={16} textAlign="right">
+                                        <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button>
                                         <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>Next</Button>
                                     </Grid.Column>
                                 </Grid>
@@ -245,30 +270,40 @@ const Invoices = () => {
                             active={activeIndex === 4}
                         >
                             <Form size="large">
-                                <Grid >
-                                    <Grid.Column width={3}>
-                                        <Form.Input placeholder="Item Name" fluid />
-                                    </Grid.Column>
-                                    <Grid.Column width={4}>
-                                        <Form.Input placeholder="Item Description" fluid />
-                                    </Grid.Column>
-                                    <Grid.Column width={2}>
-                                        <Form.Input placeholder="Quantity" fluid />
-                                    </Grid.Column>
-                                    <Grid.Column width={2}>
-                                        <Form.Input icon="dollar sign" iconPosition="left" placeholder="Price" fluid />
-                                    </Grid.Column>
-                                    <Grid.Column width={2}>
-                                        <Form.Input icon="dollar sign" iconPosition="left" placeholder="Discount" fluid />
-                                    </Grid.Column>
-                                    <Grid.Column width={2} verticalAlign="middle">
-                                        <span>Total:$200.00</span>
-                                    </Grid.Column>
-                                    <Grid.Column width={1} textAlign="right">
-                                        <Button size="large" color='red' icon='close' />
-                                    </Grid.Column>
+
+
+
+
+
+
+                               {inputRows.map((elem,i)=>(
+                                   <Grid >
+                                   <Grid.Column width={3}>
+                                       <Form.Input placeholder="Item Name" fluid />
+                                   </Grid.Column>
+                                   <Grid.Column width={4}>
+                                       <Form.Input placeholder="Item Description" fluid />
+                                   </Grid.Column>
+                                   <Grid.Column width={2}>
+                                       <Form.Input placeholder="Quantity" fluid />
+                                   </Grid.Column>
+                                   <Grid.Column width={2}>
+                                       <Form.Input icon="dollar sign" iconPosition="left" placeholder="Price" fluid />
+                                   </Grid.Column>
+                                   <Grid.Column width={2}>
+                                       <Form.Input icon="dollar sign" iconPosition="left" placeholder="Discount" fluid />
+                                   </Grid.Column>
+                                   <Grid.Column width={2} verticalAlign="middle">
+                                       <span>Total:$200.00</span>
+                                   </Grid.Column>
+                                   <Grid.Column width={1} textAlign="right">
+                                       <Button size="large" onClick={()=>setInputRows(inputRows.length>1 ?inputRows.filter((item,ind)=>ind!==i):inputRows)} color='red' icon='close' />
+                                   </Grid.Column>
+                               </Grid>
+                               ))}
+                                <Grid>
                                     <Grid.Column width={16}>
-                                        <Button size="large" icon='plus' content="Add more item" />
+                                        <Button size="large" icon='plus' onClick={()=>setInputRows([...inputRows,1])} content="Add more item" />
                                     </Grid.Column>
                                     <Grid.Column width={16}>
                                         <Table singleLine basic='very'>
@@ -315,6 +350,7 @@ const Invoices = () => {
                                         </Table>
                                     </Grid.Column>
                                     <Grid.Column width={16} textAlign="right">
+                                        <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button>
                                         <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>Next</Button>
                                     </Grid.Column>
                                 </Grid>
@@ -373,13 +409,14 @@ const Invoices = () => {
                                     </Grid.Column>
                                     <Grid.Column width={16}>
                                         <Form>
-                                            <Form.TextArea rows="3" placeholder="Message"/>
+                                            <Form.TextArea rows="3" placeholder="Message" />
                                         </Form>
 
                                     </Grid.Column>
                                     <Grid.Column width={16} textAlign="right">
                                         <Button className="btn-primary">Mark as Paid</Button>
-                                        <Button className="btn-secondary" as={Link} to='/dashboard/invoice'>Create Invoice</Button>
+                                        <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button>
+                                        <Button className="btn-secondary" as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice`}>Create Invoice</Button>
                                     </Grid.Column>
                                 </Grid>
                             </Form>

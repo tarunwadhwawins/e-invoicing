@@ -6,7 +6,12 @@ import { Link } from 'react-router-dom'
 
 
 
+import { env } from '../../shared/functional/global-import';
+
+
+
 const Signin = () => {
+    debugger
     return (
         <div className="signIn">
             <div className="signInner">
@@ -18,7 +23,9 @@ const Signin = () => {
                         <Form>
                             <Form.Input fluid label='Username' placeholder='Enter Your Username' icon='user outline' iconPosition='left' />
                             <Form.Input fluid label='Password' placeholder='Enter Your Password' icon='mail outline' iconPosition='left' />
-                            <Button as={Link} to='/dashboard/profile'  className='btn-primary' type='button' fluid>Sign In</Button>
+                            {/* <Link to={`${env.PUBLIC_URL}/dashboard/profile`} className="primary-color"> Sign Up</Link> */}
+
+                            <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`}  className='btn-primary' type='button' fluid>Sign In</Button>
                         </Form>
                     </Grid.Column>
                 </Grid>

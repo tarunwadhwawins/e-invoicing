@@ -6,7 +6,7 @@ const Subscription = () => {
     return (
         <Grid>
             <Grid.Column width={4} verticalAlign="middle">
-                <Header as="h2">Subscription</Header>
+                <Header as="h2">Subscriptions</Header>
             </Grid.Column>
             <Grid.Column width={8}>
                 <Form.Input size="large" action={{ icon: 'search' }} placeholder='Search...' fluid />
