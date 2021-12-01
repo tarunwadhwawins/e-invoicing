@@ -24,7 +24,7 @@ const Signin = () => {
                             <Form.Input fluid label='Password' placeholder='Enter Your Password' icon='lock' iconPosition='left' />
                             {/* <Link to={`${env.PUBLIC_URL}/dashboard/profile`} className="primary-color"> Sign Up</Link> */}
 
-                            <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`}  className='btn-secondary' type='button' fluid>Sign In</Button>
+                            <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/dashboard`}  className='btn-secondary' type='button' fluid>Sign In</Button>
                         </Form>
                     </Grid.Column>
                 </Grid>

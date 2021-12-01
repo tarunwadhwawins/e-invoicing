@@ -17,7 +17,7 @@ const BusinessProfile = () => {
                 <Header as="h2">Business Profile</Header>
             </Grid.Column>
             <Grid.Column width={8} textAlign="right">
-                <Button  as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`}  animated className="btn-secondary">
+                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} animated className="btn-secondary">
                     <Button.Content hidden>Back</Button.Content>
                     <Button.Content visible>
                         <Icon name='arrow left' />
@@ -65,7 +65,7 @@ const BusinessProfile = () => {
                 </Form>
             </Grid.Column>
             <Grid.Column width={16} textAlign="right">
-                <Button className="btn-secondary"  as={Link} to={`${env.PUBLIC_URL}/dashboard/catalogue`}>Continue</Button>
+                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-secondary" >Save</Button>
             </Grid.Column>
         </Grid>
     )

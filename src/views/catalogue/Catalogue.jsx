@@ -29,7 +29,7 @@ const Catalogue = () => {
                     <Button size='large' icon='add' />
                 </Grid.Column>
                 <Grid.Column width={16} textAlign="right">
-                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/agreement`} className="btn-secondary">Continue</Button>
+                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-secondary" >Save</Button>
                 </Grid.Column>
             </Grid>
         </Form>

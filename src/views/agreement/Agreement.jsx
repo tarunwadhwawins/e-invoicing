@@ -98,7 +98,7 @@ const Agreement = () => {
                 <Tab menu={{ secondary: true }} panes={panes} className="agreementTabs" />
             </Grid.Column>
             <Grid.Column width={16} textAlign="right">
-                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/team`} className="btn-secondary" >Next</Button>
+                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-secondary" >Save</Button>
             </Grid.Column>
         </Grid>
     )

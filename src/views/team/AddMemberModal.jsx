@@ -3,8 +3,8 @@ import { Button, Grid, Modal, Image, Divider, Form } from 'semantic-ui-react'
 import User from "../../assets/images/team-profile.png"
 
 const role = [
-    { key: 'Admin', text: 'Admin', value: 'Admin' },
-    { key: 'Sub-admin', text: 'Sub-admin', value: 'Sub-admin' },
+    { key: 'Business Admin', text: 'Business Admin', value: 'Business Admin' },
+    { key: 'Staff', text: 'Staff', value: 'Staff' },
 ]
 
 const AddMemberModal = ({ open, setOpen }) => {
@@ -37,9 +37,6 @@ const AddMemberModal = ({ open, setOpen }) => {
                                     </Grid.Column>
                                     <Grid.Column width={8}>
                                         <Form.Input placeholder="Phone Number" fluid />
-                                    </Grid.Column>
-                                    <Grid.Column width={8}>
-                                        <Form.Input placeholder="Designation" fluid />
                                     </Grid.Column>
                                     <Grid.Column width={8}>
                                         <Form.Select placeholder="Select Role"  options={role} fluid />

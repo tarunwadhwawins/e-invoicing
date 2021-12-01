@@ -32,7 +32,6 @@ const Team = () => {
                                     <Table.HeaderCell>Name <Icon name="sort" /></Table.HeaderCell>
                                     <Table.HeaderCell>Email <Icon name="sort" /></Table.HeaderCell>
                                     <Table.HeaderCell>Phone  <Icon name="sort" /></Table.HeaderCell>
-                                    <Table.HeaderCell>Designation <Icon name="sort" /></Table.HeaderCell>
                                     <Table.HeaderCell>Roles <Icon name="sort" /></Table.HeaderCell>
                                     <Table.HeaderCell>Active/Inactive <Icon name="sort" /></Table.HeaderCell>
                                     <Table.HeaderCell>Actions</Table.HeaderCell>
@@ -44,9 +43,8 @@ const Team = () => {
                                     <Table.Cell><Link>Smith</Link></Table.Cell>
                                     <Table.Cell><Link>smith87@gmail.com</Link></Table.Cell>
                                     <Table.Cell>(789)-456-995</Table.Cell>
-                                    <Table.Cell>Administrative</Table.Cell>
                                     <Table.Cell>
-                                        <Label color='green'>Admin</Label>
+                                        <Label color='green'>Business Admin</Label>
                                     </Table.Cell>
                                     <Table.Cell><Form.Checkbox className="commonToggle" toggle /></Table.Cell>
                                     <Table.Cell>
@@ -58,9 +56,8 @@ const Team = () => {
                                     <Table.Cell><Link>Joseph</Link></Table.Cell>
                                     <Table.Cell><Link>joseph77@gmail.com</Link></Table.Cell>
                                     <Table.Cell>(557)-887-678</Table.Cell>
-                                    <Table.Cell>Manager</Table.Cell>
                                     <Table.Cell>
-                                        <Label color='green'>Admin</Label>
+                                        <Label color='green'>Business Admin</Label>
                                     </Table.Cell>
                                     <Table.Cell><Form.Checkbox className="commonToggle" toggle /></Table.Cell>
                                     <Table.Cell>
@@ -72,9 +69,8 @@ const Team = () => {
                                     <Table.Cell><Link>Robert</Link></Table.Cell>
                                     <Table.Cell><Link>robert77@gmail.com</Link></Table.Cell>
                                     <Table.Cell>(366)-777-333</Table.Cell>
-                                    <Table.Cell>Executive</Table.Cell>
                                     <Table.Cell>
-                                        <Label color='blue'>Sub-admin</Label>
+                                        <Label color='blue'>Staff</Label>
                                     </Table.Cell>
                                     <Table.Cell><Form.Checkbox className="commonToggle" toggle /></Table.Cell>
                                     <Table.Cell>
@@ -87,7 +83,7 @@ const Team = () => {
                     </div>
                 </Grid.Column>
                 <Grid.Column width={16} textAlign="right">
-                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/subscription-plan`} className="btn-secondary" >Next</Button>
+                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-secondary" >Save</Button>
                 </Grid.Column>
             </Grid>
         </Form>
