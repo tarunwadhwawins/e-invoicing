@@ -1,49 +1,70 @@
 @import "../../assets/scss/variables.scss";
+
+.settingBox {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    padding: 25px 15px;
+    background-color: $contrast-color;
+    display: block;
+    img.ui.image {
+        max-width: 100px;
+        margin: 0 auto;
+    }
+    .ui.header {
+        min-height: 48px;
+        small {
+            color: $primary-color;
+        }
+    }
+}
 .customStepper.ui.steps {
     display: flex;
     border: none;
-    justify-content: space-between;
     position: relative;
     &::after {
         content: "";
         position: absolute;
-        top: 50%;
-        background: #000;
-        height: 1px;
-        transform: translateY(-50%);
+        bottom: 0;
+        background: $alternate-color-300;
+        height: 2px;
+        // transform: translateY(-50%);
         left: 0;
         right: 0;
+        z-index: 2;
     }
     .step {
         background-color: $alternate-color-100;
         border: none;
+        border-radius: 0;
         flex: inherit;
-        padding: 10px 15px;
+        padding: 0 40px 0 0;
         position: relative;
-        z-index: 2;
         &::after {
             display: none;
         }
         &::before {
-            height: 30px;
-            width: 30px;
-            background-color: $primary-color;
-            color: $secondary-color;
-            font-size: 18px;
-            line-height: 30px;
-            border-radius: 50%;
+            display: none;
         }
         .content {
+            padding: 12px 0;
+            border-bottom: 2px solid transparent;
+            z-index: 9;
+            position: relative;
             .title {
                 color: $secondary-color;
-                font-size: 20px;
+                font-size: 18px;
             }
         }
-        &.active {
-            &::before {
-                background-color: $secondary-color;
-                color: $contrast-color;
+        &.active,
+        &:hover {
+            background-color: transparent !important;
+            .content {
+                border-color: $secondary-color;
             }
+        }
+        small {
+            color: $primary-color;
         }
     }
 }
@@ -75,5 +96,23 @@
         font-size: 13px;
         text-transform: uppercase;
         letter-spacing: 1px;
+    }
+}
+
+.agreementTabs {
+    .ui.menu {
+        .item {
+            background-color: $alternate-color-300;
+            &.active,
+            &:hover {
+                background-color: $secondary-color !important;
+                color: $contrast-color !important;
+            }
+        }
+    }
+    .ui.tab {
+        border: none;
+        background-color: transparent;
+        padding: 0;
     }
 }

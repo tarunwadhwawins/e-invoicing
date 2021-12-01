@@ -1,64 +1,55 @@
-import React, { createContext, useContext, useMemo, useState } from 'react'
-import { Step, Grid, Header } from 'semantic-ui-react'
-import FirstComponent from './steps/step1/Step1'
-import SecondComponent from './steps/step2/Step2'
-import ThirdComponent from './steps/step3/Step3'
+import React from 'react'
+import { Step, Grid, Header, Image } from 'semantic-ui-react'
+import Business from "../../assets/images/business.svg"
+import Catalogue from "../../assets/images/catalogue.svg"
+import Agreement from "../../assets/images/agreement.svg"
+import Team from "../../assets/images/team.svg"
+import Subscription from "../../assets/images/subscription-plan.svg"
 import "./home.scss"
-export const StepperContext = createContext(null)
-export const Steps = {
-    First: 'First',
-    Second: "Second",
-    Third: 'Third'
-}
+import { Link } from 'react-router-dom'
+import { env } from '../../shared/functional/global-import';
 
-const Components = {
-    First: FirstComponent,
-    Second: SecondComponent,
-    Third: ThirdComponent
-}
 
 const Home = () => {
-
-    const [activeStep, setActiveStep] = useState(Steps.First)
-
-    const ActiveStep = Components[activeStep]
-
-    const stepperContextValue = useMemo(() => ({ activeStep: activeStep, setActiveStep: setActiveStep }), [activeStep, setActiveStep])
-
-
     return (
         <>
-
             <Grid>
                 <Grid.Column width={16}>
                     <Header as="h2">Company Profile Setup</Header>
                 </Grid.Column>
-                <Grid.Column width={16}>
-                    <Step.Group ordered className="customStepper">
-                        <Step active={activeStep === Steps.First}>
-                            <Step.Content>
-                                <Step.Title>Business profile </Step.Title>
-                            </Step.Content>
-                        </Step>
-
-                        <Step active={activeStep === Steps.Second}>
-                            <Step.Content>
-                                <Step.Title>Catalogue </Step.Title>
-                            </Step.Content>
-                        </Step>
-
-                        <Step active={activeStep === Steps.Third}>
-                            <Step.Content>
-                                <Step.Title>Agreements</Step.Title>
-                            </Step.Content>
-                        </Step>
-                    </Step.Group>
+            </Grid>
+            <Grid columns={5}>
+                <Grid.Column>
+                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/business-profile`}>
+                        <Image src={Business} />
+                        <Header as="h3">Business profile</Header>
+                    </Link>
+                </Grid.Column>
+                <Grid.Column>
+                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/catalogue`}>
+                        <Image src={Catalogue} />
+                        <Header as="h3">Catalogue <br /><small>Product/Service</small></Header>
+                    </Link >
+                </Grid.Column>
+                <Grid.Column>
+                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/agreement`}>
+                        <Image src={Agreement} />
+                        <Header as="h3">Agreement</Header>
+                    </Link>
+                </Grid.Column>
+                <Grid.Column>
+                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/team`}>
+                        <Image src={Team} />
+                        <Header as="h3">Team</Header>
+                    </Link>
+                </Grid.Column>
+                <Grid.Column>
+                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/subscription-plan`}>
+                        <Image src={Subscription} />
+                        <Header as="h3">Subscription Plan</Header>
+                    </Link>
                 </Grid.Column>
             </Grid>
-
-            <StepperContext.Provider value={stepperContextValue} >
-                <ActiveStep />
-            </StepperContext.Provider>
 
         </>
     )

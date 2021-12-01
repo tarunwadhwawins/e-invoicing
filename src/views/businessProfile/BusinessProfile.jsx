@@ -1,6 +1,6 @@
-import { useContext } from "react"
-import { Grid, Button, Icon, Form } from "semantic-ui-react"
-import { StepperContext, Steps } from "../../Home"
+import { Grid, Button, Icon, Form, Header } from "semantic-ui-react"
+import { Link } from 'react-router-dom'
+import { env } from '../../shared/functional/global-import';
 
 const category = [
     { key: 'm', text: 'Category 1', value: 'Category 1' },
@@ -9,11 +9,21 @@ const category = [
 ]
 
 
-const FirstComponent = () => {
+const BusinessProfile = () => {
 
-    const { activeStep, setActiveStep } = useContext(StepperContext)
     return (
         <Grid>
+            <Grid.Column width={8} verticalAlign="middle">
+                <Header as="h2">Business Profile</Header>
+            </Grid.Column>
+            <Grid.Column width={8} textAlign="right">
+                <Button  as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`}  animated className="btn-secondary">
+                    <Button.Content hidden>Back</Button.Content>
+                    <Button.Content visible>
+                        <Icon name='arrow left' />
+                    </Button.Content>
+                </Button>
+            </Grid.Column>
             <Grid.Column width={4} textAlign="center">
                 <div className="uploadImg">
                     <Icon name="arrow up" />
@@ -28,8 +38,12 @@ const FirstComponent = () => {
                             <Form.Input placeholder='Business Name' fluid />
                         </Grid.Column>
                         <Grid.Column width={8}>
+                            <Form.TextArea placeholder='Business Address' rows="1" fluid />
+                        </Grid.Column>
+                        <Grid.Column width={8}>
                             <Form.Input placeholder='Business Email Address' fluid />
                         </Grid.Column>
+
                         <Grid.Column width={8}>
                             <Form.Input placeholder='Phone Number' fluid />
                         </Grid.Column>
@@ -42,9 +56,7 @@ const FirstComponent = () => {
                         <Grid.Column width={8}>
                             <Form.Input placeholder='Zip Code' fluid />
                         </Grid.Column>
-                        <Grid.Column width={8}>
-                            <Form.TextArea placeholder='Business Address' rows="1" fluid />
-                        </Grid.Column>
+
 
                         <Grid.Column width={8}>
                             <Form.Select placeholder='Business Category' fluid options={category} />
@@ -53,11 +65,11 @@ const FirstComponent = () => {
                 </Form>
             </Grid.Column>
             <Grid.Column width={16} textAlign="right">
-                <Button className="btn-secondary" onClick={() => setActiveStep(Steps.Second)}>Continue</Button>
+                <Button className="btn-secondary"  as={Link} to={`${env.PUBLIC_URL}/dashboard/catalogue`}>Continue</Button>
             </Grid.Column>
         </Grid>
     )
 
 }
 
-export default FirstComponent
+export default BusinessProfile

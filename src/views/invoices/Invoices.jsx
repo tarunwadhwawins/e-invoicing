@@ -6,6 +6,10 @@ import './invoices.scss'
 import { env } from '../../shared/functional/global-import';
 
 
+const paymentOptions = [
+    { key: 'Line Item', value: 'Line Item', text: ' Line Item' },
+    { key: 'Amount', value: 'Amount', text: ' Amount' },
+]
 const achOptions = [
     { key: 'Direct deposit ', value: 'Direct deposit ', text: ' Direct Deposit ' },
     { key: 'Direct payment', value: 'Direct payment', text: ' Direct Payment' },
@@ -399,6 +403,7 @@ const Invoices = () => {
                                         <Form>
                                             <Form.Group inline>
                                                 <Form.Checkbox label='Allow Partial Payment' />
+                                                <Form.Select placeholder='Partial Payment Type' options={paymentOptions} />
                                                 <Form.Checkbox label='Require Shipping Details' />
                                                 <Form.Checkbox label='Pay via ACH' />
                                                 <Form.Select placeholder='ACH Processor' options={achOptions} />

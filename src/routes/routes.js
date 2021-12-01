@@ -1,7 +1,6 @@
 // import { lazy } from 'react';
 import { useEffect } from "react";
 import { Redirect, Route, Switch, useHistory } from "react-router";
-import Dashboard from "../layout/dashboard/DashboardLayout";
 import DashboardLayout from "../layout/dashboard/DashboardLayout";
 import Home from "../views/home/Home";
 import Profile from '../views/home/Home'
@@ -10,6 +9,12 @@ import Invoice from "../views/invoice-list/Invoice";
 import Login from '../views/signin/Signin'
 import Subscription from "../views/subscription/Subscription";
 import { env } from '../shared/functional/global-import/index';
+import dashboard from "../views/dashboard/Dashboard";
+import BusinessProfile from "../views/businessProfile/BusinessProfile";
+import Catalogue from "../views/catalogue/Catalogue";
+import Agreement from "../views/agreement/Agreement";
+import Team from "../views/team/Team";
+import SubscriptionPlan from "../views/subscription-plan/SubscriptionPlan";
 // import { env } from '../shared/functional/global-import/global-import';
 
 
@@ -49,6 +54,12 @@ const DashboardContainer = ({match})=>(
             <Route exact  path={`${env.PUBLIC_URL}/dashboard/invoices`} component={Invoices}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/invoice`} component={Invoice}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/subscription`} component={Subscription}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/dashboard`} component={dashboard}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/business-profile`} component={BusinessProfile}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/catalogue`} component={Catalogue}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/agreement`} component={Agreement}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/team`} component={Team}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/subscription-plan`} component={SubscriptionPlan}/>
         </Switch>
     </DashboardLayout>
 )

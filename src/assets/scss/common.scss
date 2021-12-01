@@ -50,14 +50,15 @@
 
 .btn-primary.ui.button {
     background-color: $primary-color;
-    color: $secondary-color;
+    color: $default-color;
     border-radius: 7px;
     padding: 10px 25px;
     font-size: 18px;
     border: 2px solid $primary-color;
-    &:hover {
-        background-color: $contrast-color;
-        border-color: $secondary-color;
+    &:hover,&:focus {
+        background-color: transparent;
+        border-color: $default-color;
+        color: $default-color;
     }
     i.icon {
         color: $secondary-color !important;
@@ -71,7 +72,7 @@
     padding: 10px 25px;
     font-size: 18px;
     border: 2px solid $secondary-color;
-    &:hover {
+    &:hover,&:focus {
         background-color: $contrast-color;
         color: $secondary-color;
         i.icon {

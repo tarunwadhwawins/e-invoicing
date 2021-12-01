@@ -1,8 +1,10 @@
 import React from 'react';
 import { Grid, Icon, Image, Dropdown, Card, Feed } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
 import Logo from "../../assets/images/logo-2.png"
 import Profile from "../../assets/images/profile.jpg"
 import "./header.scss"
+import { env } from '../../shared/functional/global-import';
 
 const Header = () => {
     return (
@@ -73,9 +75,9 @@ const Header = () => {
                             <Dropdown multiple floating icon='angle down' >
                                 <Dropdown.Menu className='left'>
                                     <Dropdown.Menu scrolling>
-                                        <Dropdown.Item><Icon name="user" /> My Profile</Dropdown.Item>
+                                        <Dropdown.Item  as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`}><Icon name="user" /> Profile Setup</Dropdown.Item>
                                         <Dropdown.Item><Icon name="setting" /> User Setting</Dropdown.Item>
-                                        <Dropdown.Item><Icon name="log out" /> Log Out</Dropdown.Item>
+                                        <Dropdown.Item  as={Link} to={`${env.PUBLIC_URL}/`}><Icon name="log out" /> Log Out</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown.Menu>
                             </Dropdown>
