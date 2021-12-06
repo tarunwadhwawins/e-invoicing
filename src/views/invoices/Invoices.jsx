@@ -1,11 +1,23 @@
 import { useState } from 'react'
-import { Grid, Header, Accordion, Menu, Form, Button, Table, Input, Select } from 'semantic-ui-react'
+import { Grid, Header, Accordion, Menu, Form, Button, Table, Input, Select, Dropdown } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import './invoices.scss'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
 
 import { env } from '../../shared/functional/global-import';
 
 
+
+let options = [
+    { key: 'English', text: 'English', value: 'English' },
+    { key: 'French', text: 'French', value: 'French' },
+    { key: 'Spanish', text: 'Spanish', value: 'Spanish' },
+    { key: 'German', text: 'German', value: 'German' },
+    { key: 'Chinese', text: 'Chinese', value: 'Chinese' },
+]
 const paymentOptions = [
     { key: 'Line Item', value: 'Line Item', text: ' Line Item' },
     { key: 'Amount', value: 'Amount', text: ' Amount' },
@@ -70,24 +82,25 @@ const initialRows = [1];
 const Invoices = () => {
     const [activeIndex, setActiveIndex] = useState(0)
 
-    const [inputRows,setInputRows] = useState(initialRows)
+    const [inputRows, setInputRows] = useState(initialRows)
 
+    const [startDate, setStartDate] = useState(new Date());
 
+    const [currentValue, setCurrentValue] = useState("");
 
-
-    
+    const handleAddition = (e, { value }) => {
+        let a={ key: value, text: value, value: value }
+        options = [...options, {...a}]
+    }
+    const handleItemChange = (e, { value }) => {
+        setCurrentValue(value)
+    }
 
     const handleClick = (e, titleProps) => {
         const { index } = titleProps
         const newIndex = activeIndex === index ? -1 : index
-
         setActiveIndex(index)
     }
-
-    const addMoreClick = () => {
-       
-    }
-
 
     const [value, setValue] = useState("");
     const handleChange = (e, { value }) => setValue(value);
@@ -245,69 +258,56 @@ const Invoices = () => {
                     <Menu.Item>
                         <Accordion.Title
                             active={activeIndex === 3}
-                            content='Currency'
+                            content='Items'
                             index={3}
                             onClick={handleClick}
                         />
-                        <Accordion.Content active={activeIndex === 3}>
-                            <Form size="large">
-                                <Grid >
-                                    <Grid.Column width={16}>
-                                        <Form.Select placeholder="Currency" options={currencyOptions} fluid />
-                                    </Grid.Column>
-                                    <Grid.Column width={16} textAlign="right">
-                                        <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button>
-                                        <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>Next</Button>
-                                    </Grid.Column>
-                                </Grid>
-                            </Form>
-                        </Accordion.Content>
-                    </Menu.Item>
-                    <Menu.Item>
-                        <Accordion.Title
-                            active={activeIndex === 4}
-                            content='Items'
-                            index={4}
-                            onClick={handleClick}
-                        />
                         <Accordion.Content
-                            active={activeIndex === 4}
+                            active={activeIndex === 3}
                         >
                             <Form size="large">
 
-
-
-
-
-
-                               {inputRows.map((elem,i)=>(
-                                   <Grid >
-                                   <Grid.Column width={3}>
-                                       <Form.Input placeholder="Item Name" fluid />
-                                   </Grid.Column>
-                                   <Grid.Column width={4}>
-                                       <Form.Input placeholder="Item Description" fluid />
-                                   </Grid.Column>
-                                   <Grid.Column width={2}>
-                                       <Form.Input placeholder="Quantity" fluid />
-                                   </Grid.Column>
-                                   <Grid.Column width={2}>
-                                       <Form.Input icon="dollar sign" iconPosition="left" placeholder="Price" fluid />
-                                   </Grid.Column>
-                                   <Grid.Column width={2}>
-                                       <Form.Input icon="dollar sign" iconPosition="left" placeholder="Discount" fluid />
-                                   </Grid.Column>
-                                   <Grid.Column width={2} verticalAlign="middle">
-                                       <span>Total:$200.00</span>
-                                   </Grid.Column>
-                                   <Grid.Column width={1} textAlign="right">
-                                       <Button size="large" onClick={()=>setInputRows(inputRows.length>1 ?inputRows.filter((item,ind)=>ind!==i):inputRows)} color='red' icon='close' />
-                                   </Grid.Column>
-                               </Grid>
-                               ))}
+                                {inputRows.map((elem, i) => (
+                                    <Grid >
+                                        <Grid.Column width={3}>
+                                            {/* <Form.Input placeholder="Item Name" fluid /> */}
+                                            <Dropdown
+                                                options={options}
+                                                placeholder='Choose Language'
+                                                search
+                                                selection
+                                                fluid
+                                                allowAdditions
+                                                additionLabel='Custom Language: '
+                                                value={currentValue}
+                                                onAddItem={handleAddition}
+                                                onChange={handleItemChange}
+                                            />
+                                            {/* Yaha use krna h  */}
+                                        </Grid.Column>
+                                        <Grid.Column width={4}>
+                                            <Form.Input placeholder="Item Description" fluid />
+                                        </Grid.Column>
+                                        <Grid.Column width={2}>
+                                            <Form.Input placeholder="Quantity" fluid />
+                                        </Grid.Column>
+                                        <Grid.Column width={2}>
+                                            <Form.Input icon="dollar sign" iconPosition="left" placeholder="Price" fluid />
+                                        </Grid.Column>
+                                        <Grid.Column width={2}>
+                                            <Form.Input icon="dollar sign" iconPosition="left" placeholder="Discount" fluid />
+                                        </Grid.Column>
+                                        <Grid.Column width={2} verticalAlign="middle">
+                                            <span>Total:$200.00</span>
+                                        </Grid.Column>
+                                        <Grid.Column width={1} textAlign="right">
+                                            <Button size="large" onClick={() => setInputRows(inputRows.length > 1 ? inputRows.filter((item, ind) => ind !== i) : inputRows)} color='red' icon='close' />
+                                        </Grid.Column>
+                                    </Grid>
+                                ))}
                                 <Grid>
                                     <Grid.Column width={16}>
-                                        <Button size="large" icon='plus' onClick={()=>setInputRows([...inputRows,1])} content="Add more item" />
+                                        <Button size="large" icon='plus' onClick={() => setInputRows([...inputRows, 1])} content="Add more item" />
                                     </Grid.Column>
                                     <Grid.Column width={16}>
                                         <Table singleLine basic='very'>
@@ -363,13 +363,13 @@ const Invoices = () => {
                     </Menu.Item>
                     <Menu.Item>
                         <Accordion.Title
-                            active={activeIndex === 5}
+                            active={activeIndex === 4}
                             content='Options/Message'
-                            index={5}
+                            index={4}
                             onClick={handleClick}
                         />
                         <Accordion.Content
-                            active={activeIndex === 5}
+                            active={activeIndex === 4}
                         >
                             <Form size="large">
                                 <Grid >
@@ -388,14 +388,15 @@ const Invoices = () => {
                                         <Form.Input placeholder="Email" />
                                     </Grid.Column>
                                     <Grid.Column width={6}>
-                                        <Form.Input type="date" placeholder="Date Due" />
+                                        {/* <Form.Input type="date" placeholder="Date Due" /> */}
+                                        <DatePicker onChange={(date) => setStartDate(date)} placeholderText="Due Date" />
                                     </Grid.Column>
                                     <Grid.Column width={4}>
                                         <Header as="h5">Transaction Type</Header>
                                         <Form>
                                             <Form.Group inline>
                                                 <Form.Radio label='Sale' name="radioGroup" value="Sale" checked={value === "Sale"} onChange={handleTransactionChange} />
-                                                <Form.Radio label='Authorization' name="radioGroup" value="Authorization" checked={value === "Authorization"} onChange={handleTransactionChange} />
+                                                {/* <Form.Radio label='Authorization' name="radioGroup" value="Authorization" checked={value === "Authorization"} onChange={handleTransactionChange} /> */}
                                             </Form.Group>
                                         </Form>
                                     </Grid.Column>
@@ -407,7 +408,6 @@ const Invoices = () => {
                                                 <Form.Checkbox label='Require Shipping Details' />
                                                 <Form.Checkbox label='Pay via ACH' />
                                                 <Form.Select placeholder='ACH Processor' options={achOptions} />
-                                                <Form.Checkbox label='Pay via Plaid' />
                                                 <Form.Checkbox label='Pay via Mail' />
                                             </Form.Group>
                                         </Form>
@@ -432,6 +432,9 @@ const Invoices = () => {
         </Grid>
     )
 }
+
+
+
 
 
 export default Invoices;

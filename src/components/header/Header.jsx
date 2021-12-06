@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid, Icon, Image, Dropdown, Card, Feed } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 import Logo from "../../assets/images/logo-2.png"
 import Profile from "../../assets/images/profile.jpg"
 import "./header.scss"
 import { env } from '../../shared/functional/global-import';
+import AddMemberModal from "../../views/team/AddMemberModal";
+
 
 const Header = () => {
+    const [showAddMemberModal, setShowAddMemberModal] = useState(false)
+
     return (
         <div className="headerTop">
+            <AddMemberModal open={showAddMemberModal} setOpen={setShowAddMemberModal} />
             <Grid>
                 <Grid.Column width={8}>
                     <div className="logoMenu">
@@ -19,7 +24,16 @@ const Header = () => {
                     </div>
                 </Grid.Column>
                 <Grid.Column width={8} textAlign="right" verticalAlign="middle">
+
                     <div className="dropDowns">
+                        <Dropdown multiple text="Quick Actions" icon='angle down'>
+                            <Dropdown.Menu>
+                                <Dropdown.Menu scrolling>
+                                    <Dropdown.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/invoices`}><Icon name="vcard" /> Create Invoice</Dropdown.Item>
+                                    <Dropdown.Item  onClick={() => setShowAddMemberModal(true)}><Icon name="user" /> Add Team Member</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown.Menu>
+                        </Dropdown>
                         <Dropdown multiple icon='bell outline' floating>
                             <Dropdown.Menu className='left'>
                                 <Card fluid>
@@ -66,7 +80,7 @@ const Header = () => {
                                         </Feed>
                                     </Card.Content>
                                     <Card.Content extra>
-                                        <a>All Notifications</a>
+                                        <Link to={`${env.PUBLIC_URL}/dashboard/notifications`}>All Notifications</Link>
                                     </Card.Content>
                                 </Card>
                             </Dropdown.Menu>

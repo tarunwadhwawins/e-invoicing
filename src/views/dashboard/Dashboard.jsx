@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Header, Form, Card, Image, Table, Icon, Button, Feed, List } from 'semantic-ui-react';
+import { Grid, Header, Form, Card, Image, Table, Icon, Button, Dropdown, List, Menu } from 'semantic-ui-react';
 import Image1 from '../../assets/images/collection.svg'
 import Image2 from '../../assets/images/Outstanding.svg'
 import Image3 from '../../assets/images/overdue.svg'
@@ -74,11 +74,11 @@ const Dashboard = () => {
     }, {
         name: 'Received',
         data: [1500, 900, 2000, 811, 1500, 105, 2000, 1541, 1800],
-        color:'#ffa800'
+        color: '#ffa800'
     }, {
         name: 'Outstanding',
         data: [1455, 922, 755, 665, 1804, 1600, 1754, 1154, 1054],
-        color:'#ff0000'
+        color: '#ff0000'
     }])
     return (
         <Grid>
@@ -173,10 +173,16 @@ const Dashboard = () => {
                                 <Table.Cell>441 days</Table.Cell>
                                 <Table.Cell>$452.00</Table.Cell>
                                 <Table.Cell>
-                                    <Icon name="pencil" color='green' link />
-                                    <Icon name="eye" color='teal' link />
-                                    <Icon name="alarm" color='yellow' link />
-                                    <Icon name="trash alternate" color='red' link />
+                                    <Dropdown multiple icon='ellipsis horizontal'>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Menu scrolling>
+                                                <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="eye" /> View</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="alarm" /> Reminder</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
@@ -187,10 +193,16 @@ const Dashboard = () => {
                                 <Table.Cell>441 days</Table.Cell>
                                 <Table.Cell>$553.00</Table.Cell>
                                 <Table.Cell>
-                                    <Icon name="pencil" color='green' link />
-                                    <Icon name="eye" color='teal' link />
-                                    <Icon name="alarm" color='yellow' link />
-                                    <Icon name="trash alternate" color='red' link />
+                                    <Dropdown multiple icon='ellipsis horizontal'>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Menu scrolling>
+                                                <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="eye" /> View</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="alarm" /> Reminder</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
@@ -201,13 +213,37 @@ const Dashboard = () => {
                                 <Table.Cell>441 days</Table.Cell>
                                 <Table.Cell>$673.00</Table.Cell>
                                 <Table.Cell>
-                                    <Icon name="pencil" color='green' link />
-                                    <Icon name="eye" color='teal' link />
-                                    <Icon name="alarm" color='yellow' link />
-                                    <Icon name="trash alternate" color='red' link />
+                                    <Dropdown multiple icon='ellipsis horizontal'>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Menu scrolling>
+                                                <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="eye" /> View</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="alarm" /> Reminder</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </Table.Cell>
                             </Table.Row>
                         </Table.Body>
+                        <Table.Footer>
+                            <Table.Row>
+                                <Table.HeaderCell colSpan='8'>
+                                    <Menu floated='right' pagination>
+                                        <Menu.Item as='a' icon>
+                                            <Icon name='chevron left' />
+                                        </Menu.Item>
+                                        <Menu.Item as='a'>1</Menu.Item>
+                                        <Menu.Item as='a'>2</Menu.Item>
+                                        <Menu.Item as='a'>3</Menu.Item>
+                                        <Menu.Item as='a'>4</Menu.Item>
+                                        <Menu.Item as='a' icon>
+                                            <Icon name='chevron right' />
+                                        </Menu.Item>
+                                    </Menu>
+                                </Table.HeaderCell>
+                            </Table.Row>
+                        </Table.Footer>
                     </Table>
                 </div>
             </Grid.Column>

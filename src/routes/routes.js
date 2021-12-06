@@ -15,6 +15,7 @@ import Catalogue from "../views/catalogue/Catalogue";
 import Agreement from "../views/agreement/Agreement";
 import Team from "../views/team/Team";
 import SubscriptionPlan from "../views/subscription-plan/SubscriptionPlan";
+import Notifications from "../views/notifications/Notifications";
 // import { env } from '../shared/functional/global-import/global-import';
 
 
@@ -60,6 +61,7 @@ const DashboardContainer = ({match})=>(
             <Route exact path={`${env.PUBLIC_URL}/dashboard/agreement`} component={Agreement}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/team`} component={Team}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/subscription-plan`} component={SubscriptionPlan}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/notifications`} component={Notifications}/>
         </Switch>
     </DashboardLayout>
 )

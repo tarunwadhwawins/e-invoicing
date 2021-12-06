@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, Form, Button, Icon, Table, Label, Menu } from 'semantic-ui-react';
+import { Grid, Header, Form, Button, Icon, Table, Label, Menu, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 import { env } from '../../shared/functional/global-import';
 
@@ -22,8 +22,7 @@ const Invoice = () => {
                     <Table singleLine>
                         <Table.Header>
                             <Table.Row>
-                                <Table.HeaderCell>ID <Icon name="sort" /></Table.HeaderCell>
-                                <Table.HeaderCell>Invoice <Icon name="sort" /></Table.HeaderCell>
+                                <Table.HeaderCell>Invoice Number<Icon name="sort" /></Table.HeaderCell>
                                 <Table.HeaderCell>Name <Icon name="sort" /></Table.HeaderCell>
                                 <Table.HeaderCell>Amount <Icon name="sort" /></Table.HeaderCell>
                                 <Table.HeaderCell>Date Due <Icon name="sort" /></Table.HeaderCell>
@@ -35,8 +34,7 @@ const Invoice = () => {
 
                         <Table.Body>
                             <Table.Row>
-                                <Table.Cell>ffe22ss</Table.Cell>
-                                <Table.Cell>551516</Table.Cell>
+                                <Table.Cell><Link to="#">551516</Link></Table.Cell>
                                 <Table.Cell>Mission Beach Villas</Table.Cell>
                                 <Table.Cell>$18.00</Table.Cell>
                                 <Table.Cell>Nov 20, 2021</Table.Cell>
@@ -45,15 +43,20 @@ const Invoice = () => {
                                     <Label color="blue"> Pending</Label>
                                 </Table.Cell>
                                 <Table.Cell>
-                                    <Icon name="pencil" color='green' link />
-                                    <Icon name="eye" color='teal' link />
-                                    <Icon name="mail" color='yellow' link />
-                                    <Icon name="trash alternate" color='red' link />
+                                    <Dropdown multiple icon='ellipsis horizontal'>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Menu scrolling>
+                                                <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="eye" /> View</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="copy outline" /> Copy</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell>fsdss</Table.Cell>
-                                <Table.Cell>595625</Table.Cell>
+                                <Table.Cell><Link to="#">595625</Link></Table.Cell>
                                 <Table.Cell>Joseph	William</Table.Cell>
                                 <Table.Cell>$22.00</Table.Cell>
                                 <Table.Cell>Nov 15, 2021</Table.Cell>
@@ -62,15 +65,20 @@ const Invoice = () => {
                                     <Label color="green"> Paid</Label>
                                 </Table.Cell>
                                 <Table.Cell>
-                                    <Icon name="pencil" color='green' link />
-                                    <Icon name="eye" color='teal' link />
-                                    <Icon name="mail" color='yellow' link />
-                                    <Icon name="trash alternate" color='red' link />
+                                    <Dropdown multiple icon='ellipsis horizontal'>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Menu scrolling>
+                                                <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="eye" /> View</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="copy outline" /> Copy</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell>ggessd</Table.Cell>
-                                <Table.Cell>65452</Table.Cell>
+                                <Table.Cell><Link to="#">65452</Link></Table.Cell>
                                 <Table.Cell>Jane Doe</Table.Cell>
                                 <Table.Cell>$25.00</Table.Cell>
                                 <Table.Cell>Nov 18, 2021</Table.Cell>
@@ -79,10 +87,16 @@ const Invoice = () => {
                                     <Label color="blue"> Pending</Label>
                                 </Table.Cell>
                                 <Table.Cell>
-                                    <Icon name="pencil" color='green' link />
-                                    <Icon name="eye" color='teal' link />
-                                    <Icon name="mail" color='yellow' link />
-                                    <Icon name="trash alternate" color='red' link />
+                                    <Dropdown multiple icon='ellipsis horizontal'>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Menu scrolling>
+                                                <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="eye" /> View</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="copy outline" /> Copy</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </Table.Cell>
                             </Table.Row>
                         </Table.Body>

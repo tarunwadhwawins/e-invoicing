@@ -1,6 +1,7 @@
-import { Grid, Button, Icon, Form, Header } from "semantic-ui-react"
+import { Grid, Button, Icon, Form, Header, Image } from "semantic-ui-react"
 import { Link } from 'react-router-dom'
 import { env } from '../../shared/functional/global-import';
+import Logo from "../../assets/images/logo.png"
 
 const category = [
     { key: 'm', text: 'Category 1', value: 'Category 1' },
@@ -26,9 +27,11 @@ const BusinessProfile = () => {
             </Grid.Column>
             <Grid.Column width={4} textAlign="center">
                 <div className="uploadImg">
-                    <Icon name="arrow up" />
-                    <span>Drag logo to upload</span>
+                    <Image src={Logo}/>
+                    {/* <Icon name="arrow up" /> */}
+                    {/* <span>Drag logo to upload</span> */}
                 </div>
+                
                 <Button className="btn-secondary"><Icon name="upload" /> Upload</Button>
             </Grid.Column>
             <Grid.Column width={12}>

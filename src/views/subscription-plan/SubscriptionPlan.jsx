@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Button, Form, Header, Icon, Table, Label } from "semantic-ui-react"
+import { Grid, Button, Form, Header, Icon, Table, Label, Dropdown, Popup } from "semantic-ui-react"
 import { Link } from 'react-router-dom'
 import { env } from '../../shared/functional/global-import';
 
@@ -35,13 +35,19 @@ const SubscriptionPlan = () => {
 
                             <Table.Body>
                                 <Table.Row>
-                                    <Table.Cell>Silver Plan</Table.Cell>
+                                    {/* <Table.Cell></Table.Cell>    */}
+                                    <Table.Cell><Popup content='Lorem Ipsum lorum ipsum' trigger={<span>Silver Plan</span>} /></Table.Cell>
                                     <Table.Cell>Monthly</Table.Cell>
                                     <Table.Cell>Jan 10, 2021</Table.Cell>
                                     <Table.Cell>Feb 10, 2021</Table.Cell>
                                     <Table.Cell><Label color="blue">Active</Label></Table.Cell>
                                     <Table.Cell>
-                                        <Icon name="redo" color='green' link />
+                                        <Dropdown multiple icon='ellipsis horizontal' floating>
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item><Icon name="redo" /> Renew Plan</Dropdown.Item>
+                                                <Dropdown.Item><Icon name="plus" /> Upgrade Plan</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
                                     </Table.Cell>
                                 </Table.Row>
                             </Table.Body>
