@@ -143,11 +143,8 @@ const Dashboard = () => {
                     </Card.Content>
                 </Card>
             </Grid.Column>
-            <Grid.Column width={8} verticalAlign="middle">
+            <Grid.Column width={16} verticalAlign="middle">
                 <Header as="h3">Unpaid Invoices</Header>
-            </Grid.Column>
-            <Grid.Column width={8} textAlign="right">
-                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/invoices`} className="btn-secondary"><Icon name="plus" /> Create Invoice</Button>
             </Grid.Column>
             <Grid.Column width={16}>
                 <div className="commonTable">
@@ -173,16 +170,8 @@ const Dashboard = () => {
                                 <Table.Cell>441 days</Table.Cell>
                                 <Table.Cell>$452.00</Table.Cell>
                                 <Table.Cell>
-                                    <Dropdown multiple icon='ellipsis horizontal'>
-                                        <Dropdown.Menu>
-                                            <Dropdown.Menu scrolling>
-                                                <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="eye" /> View</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="alarm" /> Reminder</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
-                                            </Dropdown.Menu>
-                                        </Dropdown.Menu>
-                                    </Dropdown>
+                                    <Icon name="edit outline" color="blue" title="Edit" link />
+                                    <Icon name="alarm outline" color="green" title="Reminder" link />
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
@@ -193,16 +182,8 @@ const Dashboard = () => {
                                 <Table.Cell>441 days</Table.Cell>
                                 <Table.Cell>$553.00</Table.Cell>
                                 <Table.Cell>
-                                    <Dropdown multiple icon='ellipsis horizontal'>
-                                        <Dropdown.Menu>
-                                            <Dropdown.Menu scrolling>
-                                                <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="eye" /> View</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="alarm" /> Reminder</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
-                                            </Dropdown.Menu>
-                                        </Dropdown.Menu>
-                                    </Dropdown>
+                                    <Icon name="edit outline" color="blue" title="Edit" link />
+                                    <Icon name="alarm outline" color="green" title="Reminder" link />
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
@@ -213,16 +194,8 @@ const Dashboard = () => {
                                 <Table.Cell>441 days</Table.Cell>
                                 <Table.Cell>$673.00</Table.Cell>
                                 <Table.Cell>
-                                    <Dropdown multiple icon='ellipsis horizontal'>
-                                        <Dropdown.Menu>
-                                            <Dropdown.Menu scrolling>
-                                                <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="eye" /> View</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="alarm" /> Reminder</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
-                                            </Dropdown.Menu>
-                                        </Dropdown.Menu>
-                                    </Dropdown>
+                                    <Icon name="edit outline" color="blue" title="Edit" link />
+                                    <Icon name="alarm outline" color="green" title="Reminder" link />
                                 </Table.Cell>
                             </Table.Row>
                         </Table.Body>

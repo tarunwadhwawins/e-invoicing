@@ -16,6 +16,9 @@ import Agreement from "../views/agreement/Agreement";
 import Team from "../views/team/Team";
 import SubscriptionPlan from "../views/subscription-plan/SubscriptionPlan";
 import Notifications from "../views/notifications/Notifications";
+import InvoiceDetail from "../views/invoiceDetail/InvoiceDetail";
+import CustomerDetail from "../views/customerDetail/CustomerDetail";
+import CRM from "../views/crm/CRM";
 // import { env } from '../shared/functional/global-import/global-import';
 
 
@@ -62,6 +65,9 @@ const DashboardContainer = ({match})=>(
             <Route exact path={`${env.PUBLIC_URL}/dashboard/team`} component={Team}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/subscription-plan`} component={SubscriptionPlan}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/notifications`} component={Notifications}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/invoice-detail`} component={InvoiceDetail}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/customer-detail`} component={CustomerDetail}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/crm`} component={CRM}/>
         </Switch>
     </DashboardLayout>
 )

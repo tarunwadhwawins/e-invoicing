@@ -12,14 +12,9 @@ const Catalogue = () => {
                     <Header as="h2">Catalogue</Header>
                 </Grid.Column>
                 <Grid.Column width={8} textAlign="right">
-                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} animated className="btn-secondary">
-                        <Button.Content hidden>Back</Button.Content>
-                        <Button.Content visible>
-                            <Icon name='arrow left' />
-                        </Button.Content>
-                    </Button>
+                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-primary">Back</Button>
                 </Grid.Column>
-                <Grid.Column width={5}>
+                <Grid.Column width={6}>
                     <Form.Input placeholder="Item Name" />
                 </Grid.Column>
                 <Grid.Column width={7}>
@@ -28,11 +23,8 @@ const Catalogue = () => {
                 <Grid.Column width={3}>
                     <Form.Input placeholder="Price Per Unit" />
                 </Grid.Column>
-                <Grid.Column width={1} textAlign='right'>
-                    <Button size='large' icon='add' />
-                </Grid.Column>
 
-                <Grid.Column width={16}>
+                <Grid.Column width={16} textAlign="right">
                     <Button className="btn-primary">Save</Button>
                 </Grid.Column>
 
@@ -54,14 +46,8 @@ const Catalogue = () => {
                                     <Table.Cell> Lorem ipsum dolor sit amet consectetur. </Table.Cell>
                                     <Table.Cell>$20.00</Table.Cell>
                                     <Table.Cell>
-                                        <Dropdown multiple icon='ellipsis horizontal'>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Menu scrolling>
-                                                    <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
-                                                    <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
-                                                </Dropdown.Menu>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
+                                        <Icon name="edit outline" color="blue" title="Edit" link />
+                                        <Icon name="trash alternate outline" color="red" title="Delete" link />
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row>
@@ -69,14 +55,8 @@ const Catalogue = () => {
                                     <Table.Cell> Lorem ipsum dolor sit amet consectetur. </Table.Cell>
                                     <Table.Cell>$15.00</Table.Cell>
                                     <Table.Cell>
-                                        <Dropdown multiple icon='ellipsis horizontal'>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Menu scrolling>
-                                                    <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
-                                                    <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
-                                                </Dropdown.Menu>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
+                                        <Icon name="edit outline" color="blue" title="Edit" link />
+                                        <Icon name="trash alternate outline" color="red" title="Delete" link />
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row>
@@ -84,14 +64,8 @@ const Catalogue = () => {
                                     <Table.Cell> Lorem ipsum dolor sit amet consectetur. </Table.Cell>
                                     <Table.Cell>$15.00</Table.Cell>
                                     <Table.Cell>
-                                        <Dropdown multiple icon='ellipsis horizontal'>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Menu scrolling>
-                                                    <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
-                                                    <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
-                                                </Dropdown.Menu>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
+                                        <Icon name="edit outline" color="blue" title="Edit" link />
+                                        <Icon name="trash alternate outline" color="red" title="Delete" link />
                                     </Table.Cell>
                                 </Table.Row>
                             </Table.Body>

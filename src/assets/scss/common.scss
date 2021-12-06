@@ -1,5 +1,16 @@
 @import "./variables.scss";
 
+
+.secondary-color {
+    color: $secondary-color!important;
+}
+.alternate-color-900 {
+    color: $alternate-color-900;
+}
+.m-0 {
+    margin: 0!important;
+}
+
 .field {
     .ui.input {
         input {

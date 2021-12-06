@@ -18,12 +18,7 @@ const BusinessProfile = () => {
                 <Header as="h2">Business Profile</Header>
             </Grid.Column>
             <Grid.Column width={8} textAlign="right">
-                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} animated className="btn-secondary">
-                    <Button.Content hidden>Back</Button.Content>
-                    <Button.Content visible>
-                        <Icon name='arrow left' />
-                    </Button.Content>
-                </Button>
+                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-primary">Back</Button>
             </Grid.Column>
             <Grid.Column width={4} textAlign="center">
                 <div className="uploadImg">

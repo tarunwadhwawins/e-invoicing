@@ -12,12 +12,7 @@ const SubscriptionPlan = () => {
                     <Header as="h2">Subscription Plan</Header>
                 </Grid.Column>
                 <Grid.Column width={8} textAlign="right">
-                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} animated className="btn-secondary">
-                        <Button.Content hidden>Back</Button.Content>
-                        <Button.Content visible>
-                            <Icon name='arrow left' />
-                        </Button.Content>
-                    </Button>
+                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-primary">Back</Button>
                 </Grid.Column>
                 <Grid.Column width={16}>
                     <div className="commonTable">
@@ -42,12 +37,8 @@ const SubscriptionPlan = () => {
                                     <Table.Cell>Feb 10, 2021</Table.Cell>
                                     <Table.Cell><Label color="blue">Active</Label></Table.Cell>
                                     <Table.Cell>
-                                        <Dropdown multiple icon='ellipsis horizontal' floating>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Item><Icon name="redo" /> Renew Plan</Dropdown.Item>
-                                                <Dropdown.Item><Icon name="plus" /> Upgrade Plan</Dropdown.Item>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
+                                        <Icon name="redo" color="blue" title="Renew Plan" link />
+                                        <Icon name="plus" color="green" title="Upgrade Plan" link />
                                     </Table.Cell>
                                 </Table.Row>
                             </Table.Body>

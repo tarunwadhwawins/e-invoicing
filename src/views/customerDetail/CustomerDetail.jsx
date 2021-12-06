@@ -1,18 +1,53 @@
-import React from 'react';
-import { Grid, Header, Form, Icon, Table, Label, Menu } from 'semantic-ui-react';
+import React from 'react'
+import { Grid, Header, Button, List, Table, Menu, Icon, Tab, Label } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { env } from '../../shared/functional/global-import';
+import "./customer-detail.scss"
 
-
-
-const Invoice = () => {
+const CustomerDetail = () => {
     return (
         <Grid>
-            <Grid.Column width={4} verticalAlign="middle">
-                <Header as="h2">Invoice List</Header>
+            <Grid.Column width={8} verticalAlign="middle">
+                <Header as="h2">Customer Detail</Header>
             </Grid.Column>
-            <Grid.Column width={12}>
-                <Form.Input size="large" action={{ icon: 'search' }} placeholder='Search...' fluid />
+            <Grid.Column width={8} textAlign="right">
+                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice`} className='btn-primary' type='button'>Back</Button>
+            </Grid.Column>
+            <Grid.Column width={16} verticalAlign="middle">
+                <div className="customerDetail">
+                    <div className="leftCard">
+                        <Header as="h1" className="secondary-color m-0">Jane Doe</Header>
+                        <p>Customer Since : Jan 20, 2021</p>
+                    </div>
+                    <div className="rightCard">
+                        <p>Total Invoice</p>
+                        <Header as="h2" className="secondary-color m-0">$45,225.00</Header>
+                    </div>
+                </div>
+                <div className="customerDesc">
+                    <div className="innerBox">
+                        <List>
+                            <List.Item>
+                                <List.Icon name='mail' />
+                                <List.Content>jane@gmail.com</List.Content>
+                            </List.Item>
+                            <List.Item>
+                                <List.Icon name='phone' rotated='clockwise' />
+                                <List.Content>(565) 5665-5556</List.Content>
+                            </List.Item>
+                            <List.Item>
+                                <List.Icon name='map marker alternate' />
+                                <List.Content>128, My Street, Kingston, New York 12401.</List.Content>
+                            </List.Item>
+                        </List>
+                    </div>
+                    <div className="innerBox">
+                        <List>
+                            <List.Item>Last Invoice Date: <b>Nov 25, 2021</b></List.Item>
+                            <List.Item>Upcoming Invoice Date: <b>Dec 10, 2021</b></List.Item>
+                        </List>
+                    </div>
+                </div>
             </Grid.Column>
             <Grid.Column width={16}>
                 <div className="commonTable">
@@ -20,11 +55,9 @@ const Invoice = () => {
                         <Table.Header>
                             <Table.Row>
                                 <Table.HeaderCell>Invoice Number<Icon name="sort" /></Table.HeaderCell>
-                                <Table.HeaderCell>Customer Name <Icon name="sort" /></Table.HeaderCell>
                                 <Table.HeaderCell>Amount <Icon name="sort" /></Table.HeaderCell>
                                 <Table.HeaderCell>Due Date<Icon name="sort" /></Table.HeaderCell>
-                                <Table.HeaderCell>Created <Icon name="sort" /></Table.HeaderCell>
-                                <Table.HeaderCell>Status <Icon name="sort" /></Table.HeaderCell>
+                                <Table.HeaderCell>Status<Icon name="sort" /></Table.HeaderCell>
                                 <Table.HeaderCell>Actions</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
@@ -32,12 +65,10 @@ const Invoice = () => {
                         <Table.Body>
                             <Table.Row>
                                 <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>551516</Link></Table.Cell>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/customer-detail`}>Mission Beach Villas</Link></Table.Cell>
                                 <Table.Cell>$18.00</Table.Cell>
                                 <Table.Cell>Nov 20, 2021</Table.Cell>
-                                <Table.Cell>Nov 20, 2021</Table.Cell>
                                 <Table.Cell>
-                                    <Label color="blue"> Pending</Label>
+                                    <Label color="blue">Pending</Label>
                                 </Table.Cell>
                                 <Table.Cell>
                                     <Icon name="edit outline" color="blue" title="Edit" link />
@@ -46,12 +77,10 @@ const Invoice = () => {
                             </Table.Row>
                             <Table.Row>
                                 <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>595625</Link></Table.Cell>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/customer-detail`}>Joseph	William</Link></Table.Cell>
                                 <Table.Cell>$22.00</Table.Cell>
                                 <Table.Cell>Nov 15, 2021</Table.Cell>
-                                <Table.Cell>Nov 15, 2021</Table.Cell>
                                 <Table.Cell>
-                                    <Label color="green"> Paid</Label>
+                                    <Label color="green">Paid</Label>
                                 </Table.Cell>
                                 <Table.Cell>
                                     <Icon name="edit outline" color="blue" title="Edit" link />
@@ -60,12 +89,10 @@ const Invoice = () => {
                             </Table.Row>
                             <Table.Row>
                                 <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>65452</Link></Table.Cell>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/customer-detail`}>Jane Doe</Link></Table.Cell>
                                 <Table.Cell>$25.00</Table.Cell>
                                 <Table.Cell>Nov 18, 2021</Table.Cell>
-                                <Table.Cell>Nov 18, 2021</Table.Cell>
                                 <Table.Cell>
-                                    <Label color="blue"> Pending</Label>
+                                    <Label color="red">Overdue</Label>
                                 </Table.Cell>
                                 <Table.Cell>
                                     <Icon name="edit outline" color="blue" title="Edit" link />
@@ -95,7 +122,7 @@ const Invoice = () => {
                 </div>
             </Grid.Column>
         </Grid>
-    );
-};
+    )
+}
 
-export default Invoice;
+export default CustomerDetail

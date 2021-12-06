@@ -17,12 +17,7 @@ const Team = () => {
                     <Header as="h2">Team</Header>
                 </Grid.Column>
                 <Grid.Column width={8} textAlign="right">
-                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} animated className="btn-secondary">
-                        <Button.Content hidden>Back</Button.Content>
-                        <Button.Content visible>
-                            <Icon name='arrow left' />
-                        </Button.Content>
-                    </Button>
+                    <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-primary">Back</Button>
                     <Button onClick={() => setShowAddMemberModal(true)} className="btn-secondary"><Icon name="plus" /> New Member</Button>
                 </Grid.Column>
                 <Grid.Column width={16}>
@@ -49,14 +44,8 @@ const Team = () => {
                                     </Table.Cell>
                                     <Table.Cell><Form.Checkbox className="commonToggle" toggle /></Table.Cell>
                                     <Table.Cell>
-                                        <Dropdown multiple icon='ellipsis horizontal'>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Menu scrolling>
-                                                    <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
-                                                    <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
-                                                </Dropdown.Menu>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
+                                        <Icon name="edit outline" color="blue" title="Edit" link />
+                                        <Icon name="trash alternate outline" color="red" title="Delete" link />
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row>
@@ -68,14 +57,8 @@ const Team = () => {
                                     </Table.Cell>
                                     <Table.Cell><Form.Checkbox className="commonToggle" toggle /></Table.Cell>
                                     <Table.Cell>
-                                        <Dropdown multiple icon='ellipsis horizontal'>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Menu scrolling>
-                                                    <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
-                                                    <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
-                                                </Dropdown.Menu>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
+                                        <Icon name="edit outline" color="blue" title="Edit" link />
+                                        <Icon name="trash alternate outline" color="red" title="Delete" link />
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row>
@@ -87,14 +70,8 @@ const Team = () => {
                                     </Table.Cell>
                                     <Table.Cell><Form.Checkbox className="commonToggle" toggle /></Table.Cell>
                                     <Table.Cell>
-                                        <Dropdown multiple icon='ellipsis horizontal'>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Menu scrolling>
-                                                    <Dropdown.Item><Icon name="edit outline" /> Edit</Dropdown.Item>
-                                                    <Dropdown.Item><Icon name="trash alternate outline" /> Delete</Dropdown.Item>
-                                                </Dropdown.Menu>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
+                                        <Icon name="edit outline" color="blue" title="Edit" link />
+                                        <Icon name="trash alternate outline" color="red" title="Delete" link />
                                     </Table.Cell>
                                 </Table.Row>
                             </Table.Body>

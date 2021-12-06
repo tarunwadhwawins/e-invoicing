@@ -12,11 +12,16 @@ import { env } from '../../shared/functional/global-import';
 
 
 let options = [
-    { key: 'English', text: 'English', value: 'English' },
-    { key: 'French', text: 'French', value: 'French' },
-    { key: 'Spanish', text: 'Spanish', value: 'Spanish' },
-    { key: 'German', text: 'German', value: 'German' },
-    { key: 'Chinese', text: 'Chinese', value: 'Chinese' },
+    { key: 'Item 1', text: 'Item 1', value: 'Item 1' },
+    { key: 'Item 2', text: 'Item 2', value: 'Item 2' },
+    { key: 'Item 3', text: 'Item 3', value: 'Item 3' },
+    { key: 'Item 4', text: 'Item 4', value: 'Item 4' },
+]
+let companyOptions = [
+    { key: 'Company 1', text: 'Company 1', value: 'Company 1' },
+    { key: 'Company 2', text: 'Company 2', value: 'Company 2' },
+    { key: 'Company 3', text: 'Company 3', value: 'Company 3' },
+    { key: 'Company 4', text: 'Company 4', value: 'Company 4' },
 ]
 const paymentOptions = [
     { key: 'Line Item', value: 'Line Item', text: ' Line Item' },
@@ -87,13 +92,21 @@ const Invoices = () => {
     const [startDate, setStartDate] = useState(new Date());
 
     const [currentValue, setCurrentValue] = useState("");
+    const [currentCompanyValue, setCompanyCurrentValue] = useState("");
 
     const handleAddition = (e, { value }) => {
-        let a={ key: value, text: value, value: value }
-        options = [...options, {...a}]
+        let a = { key: value, text: value, value: value }
+        options = [...options, { ...a }]
     }
     const handleItemChange = (e, { value }) => {
         setCurrentValue(value)
+    }
+    const handleCompanyAddition = (e, { value }) => {
+        let a = { key: value, text: value, value: value }
+        companyOptions = [...companyOptions, { ...a }]
+    }
+    const handleCompanyChange = (e, { value }) => {
+        setCompanyCurrentValue(value)
     }
 
     const handleClick = (e, titleProps) => {
@@ -124,7 +137,18 @@ const Invoices = () => {
                             <Form size="large">
                                 <Grid columns="3">
                                     <Grid.Column>
-                                        <Form.Input placeholder="Company Name" fluid />
+                                        <Dropdown
+                                            options={companyOptions}
+                                            placeholder='Search & Select Company'
+                                            search
+                                            selection
+                                            fluid
+                                            allowAdditions
+                                            additionLabel='New Company: '
+                                            value={currentCompanyValue}
+                                            onAddItem={handleCompanyAddition}
+                                            onChange={handleCompanyChange}
+                                        />
                                     </Grid.Column>
                                     <Grid.Column>
                                         <Form.Input placeholder="Customer Number" fluid />
@@ -270,20 +294,18 @@ const Invoices = () => {
                                 {inputRows.map((elem, i) => (
                                     <Grid >
                                         <Grid.Column width={3}>
-                                            {/* <Form.Input placeholder="Item Name" fluid /> */}
                                             <Dropdown
                                                 options={options}
-                                                placeholder='Choose Language'
+                                                placeholder='Search & Select Item'
                                                 search
                                                 selection
                                                 fluid
                                                 allowAdditions
-                                                additionLabel='Custom Language: '
+                                                additionLabel='New Item: '
                                                 value={currentValue}
                                                 onAddItem={handleAddition}
                                                 onChange={handleItemChange}
                                             />
-                                            {/* Yaha use krna h  */}
                                         </Grid.Column>
                                         <Grid.Column width={4}>
                                             <Form.Input placeholder="Item Description" fluid />

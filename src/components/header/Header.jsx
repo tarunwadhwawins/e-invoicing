@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Icon, Image, Dropdown, Card, Feed } from 'semantic-ui-react';
+import { Grid, Icon, Image, Dropdown, Card, Feed, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 import Logo from "../../assets/images/logo-2.png"
 import Profile from "../../assets/images/profile.jpg"
@@ -26,14 +26,7 @@ const Header = () => {
                 <Grid.Column width={8} textAlign="right" verticalAlign="middle">
 
                     <div className="dropDowns">
-                        <Dropdown multiple text="Quick Actions" icon='angle down'>
-                            <Dropdown.Menu>
-                                <Dropdown.Menu scrolling>
-                                    <Dropdown.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/invoices`}><Icon name="vcard" /> Create Invoice</Dropdown.Item>
-                                    <Dropdown.Item  onClick={() => setShowAddMemberModal(true)}><Icon name="user" /> Add Team Member</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown.Menu>
-                        </Dropdown>
+                        <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/invoices`} className="btn-secondary"><Icon name="plus" /> Create Invoice</Button>
                         <Dropdown multiple icon='bell outline' floating>
                             <Dropdown.Menu className='left'>
                                 <Card fluid>
@@ -91,7 +84,6 @@ const Header = () => {
                             <Dropdown multiple floating icon='angle down' >
                                 <Dropdown.Menu className='left'>
                                     <Dropdown.Menu scrolling>
-                                        <Dropdown.Item><Icon name="user" /> Profile Setup</Dropdown.Item>
                                         <Dropdown.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`}><Icon name="setting" /> User Setting</Dropdown.Item>
                                         <Dropdown.Item as={Link} to={`${env.PUBLIC_URL}/`}><Icon name="log out" /> Log Out</Dropdown.Item>
                                     </Dropdown.Menu>
