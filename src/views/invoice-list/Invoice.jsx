@@ -31,8 +31,8 @@ const Invoice = () => {
 
                         <Table.Body>
                             <Table.Row>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>551516</Link></Table.Cell>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/customer-detail`}>Mission Beach Villas</Link></Table.Cell>
+                                <Table.Cell><Link to="#">551516</Link></Table.Cell>
+                                <Table.Cell><Link to="#">Mission Beach Villas</Link></Table.Cell>
                                 <Table.Cell>$18.00</Table.Cell>
                                 <Table.Cell>Nov 20, 2021</Table.Cell>
                                 <Table.Cell>Nov 20, 2021</Table.Cell>
@@ -45,8 +45,8 @@ const Invoice = () => {
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>595625</Link></Table.Cell>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/customer-detail`}>Joseph	William</Link></Table.Cell>
+                                <Table.Cell><Link to="#">565456</Link></Table.Cell>
+                            <Table.Cell><Link to="#">Joseph	William</Link></Table.Cell>
                                 <Table.Cell>$22.00</Table.Cell>
                                 <Table.Cell>Nov 15, 2021</Table.Cell>
                                 <Table.Cell>Nov 15, 2021</Table.Cell>
@@ -59,7 +59,7 @@ const Invoice = () => {
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>65452</Link></Table.Cell>
+                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>595625</Link></Table.Cell>
                                 <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/customer-detail`}>Jane Doe</Link></Table.Cell>
                                 <Table.Cell>$25.00</Table.Cell>
                                 <Table.Cell>Nov 18, 2021</Table.Cell>

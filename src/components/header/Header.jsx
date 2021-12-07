@@ -8,7 +8,7 @@ import { env } from '../../shared/functional/global-import';
 import AddMemberModal from "../../views/team/AddMemberModal";
 
 
-const Header = () => {
+const Header = (props) => {
     const [showAddMemberModal, setShowAddMemberModal] = useState(false)
 
     return (
@@ -20,7 +20,7 @@ const Header = () => {
                         <Link to={`${env.PUBLIC_URL}/dashboard/dashboard`}>
                             <Image src={Logo} />
                         </Link>
-                        <Icon name="sidebar" size="big" link />
+                        <Icon name="sidebar" size="big" link  onClick={props.onMenuClick}/>
                     </div>
                 </Grid.Column>
                 <Grid.Column width={8} textAlign="right" verticalAlign="middle">

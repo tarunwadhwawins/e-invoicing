@@ -9,10 +9,10 @@ const InvoiceDetail = () => {
     return (
         <Grid>
             <Grid.Column width={8} verticalAlign="middle">
-                <Header as="h2">Invoice Number : #551516</Header>
+                <Header as="h2">Invoice Number : #595625</Header>
             </Grid.Column>
             <Grid.Column width={8} textAlign="right">
-                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice`} className='btn-primary' type='button'>Back</Button>
+                {/* <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice`} className='btn-primary' type='button'>Back</Button> */}
             </Grid.Column>
             <Grid.Column width={16}>
                 <Image src={Logo} size="small"/>
@@ -21,14 +21,14 @@ const InvoiceDetail = () => {
             </Grid.Column>
             <Grid.Column width={8}>
                 <p>Payable To :</p>
-                <Header as="h3">Jane Doe</Header>
+                <Header as="h3">Steve Smith</Header>
                 <p>132, My Street, Kingston, New York 12401.</p>
                 <p>janedoe@gmail.com</p>
                 <p>(555) 555-1234</p>
             </Grid.Column>
             <Grid.Column width={8}>
                 <p>Bill To :</p>
-                <Header as="h3">Steve Smith</Header>
+                <Header as="h3">Jane Doe</Header>
                 <p>128, My Street, Kingston, New York 12401.</p>
                 <p>smith@gmail.com</p>
                 <p>(454) 655-556</p>

@@ -11,7 +11,7 @@ const CustomerDetail = () => {
                 <Header as="h2">Customer Detail</Header>
             </Grid.Column>
             <Grid.Column width={8} textAlign="right">
-                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice`} className='btn-primary' type='button'>Back</Button>
+                {/* <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice`} className='btn-primary' type='button'>Back</Button> */}
             </Grid.Column>
             <Grid.Column width={16} verticalAlign="middle">
                 <div className="customerDetail">
@@ -64,7 +64,7 @@ const CustomerDetail = () => {
 
                         <Table.Body>
                             <Table.Row>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>551516</Link></Table.Cell>
+                                <Table.Cell><Link to="#">551516</Link></Table.Cell>
                                 <Table.Cell>$18.00</Table.Cell>
                                 <Table.Cell>Nov 20, 2021</Table.Cell>
                                 <Table.Cell>
@@ -88,7 +88,7 @@ const CustomerDetail = () => {
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>65452</Link></Table.Cell>
+                                <Table.Cell><Link to="#">65452</Link></Table.Cell>
                                 <Table.Cell>$25.00</Table.Cell>
                                 <Table.Cell>Nov 18, 2021</Table.Cell>
                                 <Table.Cell>

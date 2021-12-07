@@ -88,7 +88,7 @@ const CRM = () => {
 
                         <Table.Body>
                             <Table.Row>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/customer-detail`}>Mission Beach Villas</Link></Table.Cell>
+                                <Table.Cell><Link to="#">Mission Beach Villas</Link></Table.Cell>
                                 <Table.Cell><Link>smith@gmail.com</Link></Table.Cell>
                                 <Table.Cell>(854) 555-6545</Table.Cell>
                                 <Table.Cell>
@@ -96,7 +96,7 @@ const CRM = () => {
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/customer-detail`}>Joseph William</Link></Table.Cell>
+                                <Table.Cell><Link to="#">Joseph William</Link></Table.Cell>
                                 <Table.Cell><Link>joseph@gmail.com</Link></Table.Cell>
                                 <Table.Cell>(546) 854-8545</Table.Cell>
                                 <Table.Cell>

@@ -28,7 +28,6 @@ const Agreement = () => {
                                 <Table.Cell>
                                     <Icon name="eye" color="black" title="View" link />
                                     <Icon name="edit outline" color="blue" title="Edit" link />
-                                    <Icon name="trash alternate outline" color="red" title="Delete" link />
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
@@ -36,7 +35,6 @@ const Agreement = () => {
                                 <Table.Cell>
                                     <Icon name="eye" color="black" title="View" link />
                                     <Icon name="edit outline" color="blue" title="Edit" link />
-                                    <Icon name="trash alternate outline" color="red" title="Delete" link />
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
@@ -44,7 +42,6 @@ const Agreement = () => {
                                 <Table.Cell>
                                     <Icon name="eye" color="black" title="View" link />
                                     <Icon name="edit outline" color="blue" title="Edit" link />
-                                    <Icon name="trash alternate outline" color="red" title="Delete" link />
                                 </Table.Cell>
                             </Table.Row>
                         </Table.Body>
