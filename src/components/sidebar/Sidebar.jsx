@@ -14,6 +14,7 @@ const Sidebar = () => {
                 <Menu.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice`}><Icon name="vcard"/><span>Invoice</span></Menu.Item>
                 {/* <Menu.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/subscription`}><Icon name="tags"/><span>Subscription</span></Menu.Item> */}
                 <Menu.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/crm`}><Icon name="users"/><span>CRM</span></Menu.Item>
+                <Menu.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/customer-list`}><Icon name="user circle"/><span>Customer List</span></Menu.Item>
             </Menu>
         </div>
     )

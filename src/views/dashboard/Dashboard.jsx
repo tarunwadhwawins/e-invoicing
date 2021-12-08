@@ -258,6 +258,84 @@ const panes = [
             </div>
         </Tab.Pane>,
     },
+    {
+        menuItem: 'Overdue Invoices',
+        render: () => <Tab.Pane attached={false}>
+            <div className="commonTable">
+                <Table singleLine>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Invoice Number <Icon name="sort" /></Table.HeaderCell>
+                            <Table.HeaderCell>Client Name <Icon name="sort" /></Table.HeaderCell>
+                            <Table.HeaderCell>Date <Icon name="sort" /></Table.HeaderCell>
+                            <Table.HeaderCell>Total <Icon name="sort" /></Table.HeaderCell>
+                            <Table.HeaderCell>Overdue <Icon name="sort" /></Table.HeaderCell>
+                            <Table.HeaderCell>Outstanding <Icon name="sort" /></Table.HeaderCell>
+                            <Table.HeaderCell>Actions</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+
+                    <Table.Body>
+                        <Table.Row>
+                            <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/invoice-detail`}>595625</Link></Table.Cell>
+                            <Table.Cell><Link to={`${env.PUBLIC_URL}/dashboard/customer-detail`}>Jane Doe</Link></Table.Cell>
+                            <Table.Cell>September 14, 2020</Table.Cell>
+                            <Table.Cell>$673.00</Table.Cell>
+                            <Table.Cell>441 days</Table.Cell>
+                            <Table.Cell>$673.00</Table.Cell>
+                            <Table.Cell>
+                                <Icon name="edit outline" color="blue" title="Edit" link />
+                                <Icon name="alarm outline" color="green" title="Reminder" link />
+                            </Table.Cell>
+                        </Table.Row>
+                        <Table.Row>
+                            <Table.Cell><Link>65465</Link></Table.Cell>
+                            <Table.Cell><Link>John Lilki</Link></Table.Cell>
+                            <Table.Cell>September 14, 2020</Table.Cell>
+                            <Table.Cell>$452.00</Table.Cell>
+                            <Table.Cell>441 days</Table.Cell>
+                            <Table.Cell>$452.00</Table.Cell>
+                            <Table.Cell>
+                                <Icon name="edit outline" color="blue" title="Edit" link />
+                                <Icon name="alarm outline" color="green" title="Reminder" link />
+                            </Table.Cell>
+                        </Table.Row>
+                        <Table.Row>
+                            <Table.Cell><Link>45566</Link></Table.Cell>
+                            <Table.Cell><Link>Steve Smith</Link></Table.Cell>
+                            <Table.Cell>September 14, 2020</Table.Cell>
+                            <Table.Cell>$553.00</Table.Cell>
+                            <Table.Cell>441 days</Table.Cell>
+                            <Table.Cell>$553.00</Table.Cell>
+                            <Table.Cell>
+                                <Icon name="edit outline" color="blue" title="Edit" link />
+                                <Icon name="alarm outline" color="green" title="Reminder" link />
+                            </Table.Cell>
+                        </Table.Row>
+
+                    </Table.Body>
+                    <Table.Footer>
+                        <Table.Row>
+                            <Table.HeaderCell colSpan='8'>
+                                <Menu floated='right' pagination>
+                                    <Menu.Item as='a' icon>
+                                        <Icon name='chevron left' />
+                                    </Menu.Item>
+                                    <Menu.Item as='a'>1</Menu.Item>
+                                    <Menu.Item as='a'>2</Menu.Item>
+                                    <Menu.Item as='a'>3</Menu.Item>
+                                    <Menu.Item as='a'>4</Menu.Item>
+                                    <Menu.Item as='a' icon>
+                                        <Icon name='chevron right' />
+                                    </Menu.Item>
+                                </Menu>
+                            </Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Footer>
+                </Table>
+            </div>
+        </Tab.Pane>,
+    },
 ]
 const Options = [
     { key: 'Today', value: 'Today', text: 'Today' },

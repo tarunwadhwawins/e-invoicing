@@ -10,6 +10,7 @@ const Agreement = () => {
                 <Header as="h2">Agreement</Header>
             </Grid.Column>
             <Grid.Column width={8} textAlign="right">
+                <Button as="a" target="_blank" href="https://youtu.be/2ZII3HOlIfA" className="btn-secondary">Create Agreement</Button>
                 <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-primary">Back</Button>
             </Grid.Column>
             <Grid.Column width={16}>
@@ -38,10 +39,11 @@ const Agreement = () => {
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell>Agreement Six</Table.Cell>
+                                <Table.Cell>Company Agreement</Table.Cell>
                                 <Table.Cell>
                                     <Icon name="eye" color="black" title="View" link />
                                     <Icon name="edit outline" color="blue" title="Edit" link />
+                                    <Icon name="trash alternate outline" color="red" title="Delete" link />
                                 </Table.Cell>
                             </Table.Row>
                         </Table.Body>

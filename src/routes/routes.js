@@ -19,6 +19,7 @@ import Notifications from "../views/notifications/Notifications";
 import InvoiceDetail from "../views/invoiceDetail/InvoiceDetail";
 import CustomerDetail from "../views/customerDetail/CustomerDetail";
 import CRM from "../views/crm/CRM";
+import CustomerList from "../views/customerList/CustomerList";
 // import { env } from '../shared/functional/global-import/global-import';
 
 
@@ -68,6 +69,7 @@ const DashboardContainer = ({match})=>(
             <Route exact path={`${env.PUBLIC_URL}/dashboard/invoice-detail`} component={InvoiceDetail}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/customer-detail`} component={CustomerDetail}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/crm`} component={CRM}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/customer-list`} component={CustomerList}/>
         </Switch>
     </DashboardLayout>
 )
