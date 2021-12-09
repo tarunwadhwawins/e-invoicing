@@ -124,3 +124,26 @@ p {
         }
     }
 }
+
+.tabSection{
+    margin-bottom: 30px;
+    .ui{
+        &.text.menu{
+            margin: 0;
+            min-height: auto;
+            a{
+                font-size: 16px !important;
+                margin-bottom: 0 !important;
+                &.active{
+                    border-bottom: 3px solid #2485b1;
+                    border-radius: 0;
+                    color: #2485b1;
+                }
+            }
+        }
+    }
+    .rightAlign{
+        text-align: right;
+        margin-bottom: 5px;
+    }
+}
