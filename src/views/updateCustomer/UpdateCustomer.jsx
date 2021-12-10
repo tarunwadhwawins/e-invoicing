@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Grid, Header, Accordion, Menu, Form, Button,Icon , Table, Input, Select, Dropdown, Tab, Checkbox } from 'semantic-ui-react'
+import { Grid, Header, Accordion, Menu, Form, Button,Icon , TextArea, Table, Input, Select, Dropdown, Tab, Checkbox } from 'semantic-ui-react'
 
 
 
@@ -26,7 +26,7 @@ const stateOptions = [
     { key: 'Alaska', value: 'Alaska', text: ' Alaska' },
     { key: 'Arizona', value: 'Arizona', text: ' Arizona' },
     { key: 'Georgia', value: 'Georgia', text: ' Georgia' },
-    { key: 'Florida', value: 'Florida', text: ' Florida' },
+    { key: 'Florida', value: 'Florida', text: ' Florida' }, 
     { key: 'Mexico', value: 'Mexico', text: ' New Mexico' },
     { key: 'York', value: 'York', text: ' New York' },
 ]
@@ -96,11 +96,20 @@ const panes = [
     { menuItem: 'Card', render: () => 
     <Tab.Pane>
         <Grid columns="3">
-            <Grid.Column width="13">
-                <Form.Input placeholder="Card Number" fluid />
+            <Grid.Column width="10">
+                <h3>Card Number</h3>
+                <Form.Input placeholder="XXXX XXXX XXXX XXXX" fluid />
             </Grid.Column>
             <Grid.Column width="3">
+                <h3>Exp.</h3>
                 <Form.Input placeholder="MM/YY" fluid />
+            </Grid.Column>
+            <Grid.Column width="3">
+                <h3>CVC No.</h3>
+                <Form.Input placeholder="XXX" fluid />
+            </Grid.Column>
+            <Grid.Column width={16} className="rightAlign">
+                <Button className="btn-secondary"><Icon name="plus" />Add Card</Button>
             </Grid.Column>
         </Grid>
     </Tab.Pane> },
@@ -111,7 +120,7 @@ const panes = [
 const initialRows = [1];
 
 
-const AddCustomer = () => {
+const UpdateCustomer = () => {
 
     const [activeIndex, setActiveIndex] = useState(0)
 
@@ -158,7 +167,7 @@ const AddCustomer = () => {
     return ( 
         <Grid>
             <Grid.Column width={8} verticalAlign="middle">
-                <Header as="h2">Add Customer</Header>
+                <Header as="h2">Update Customer</Header>
             </Grid.Column>
             <Grid.Column width={16}>
                 <Accordion as={Menu} vertical className="createInvoice">
@@ -173,6 +182,18 @@ const AddCustomer = () => {
                                 <span>Company</span>
                             </div>
                         </Accordion.Title>
+                        <Accordion.Content
+                            active={activeIndex === 0}>
+                            <Grid.Column width={12}>
+                                <h3 className="idCaption">Customer Id: <span>52424252</span></h3>
+                            </Grid.Column>
+                            <Grid.Column width={12}>
+                                <Form.Input placeholder="Description:" fluid />
+                            </Grid.Column>
+                            <Grid.Column width={12} className="textField">
+                                <Form.TextArea placeholder="Note" fluid />
+                            </Grid.Column>
+                        </Accordion.Content>
                     </Menu.Item>
 
                     <Menu.Item>
@@ -188,7 +209,7 @@ const AddCustomer = () => {
                             <Form size="large">
                                 <Grid columns="3">
                                     <Grid.Column width={8}>
-                                        <Form.Input placeholder="Customer Number" fluid />                                        
+                                        <Form.Input placeholder="Customer Number" fluid />
                                     </Grid.Column>
                                     <Grid.Column width={8}>
                                         <Form.Input placeholder="Merchant ID" fluid />
@@ -330,8 +351,8 @@ const AddCustomer = () => {
                                  <Tab menu={{ text: true }} panes={panes} />                                 
                             </Grid.Column>
                             <Grid.Column width={16} textAlign="right" className="rightAlign">
-                                {/* <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button> */}
-                                <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>save</Button>
+                                <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button>
+                                <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>Update</Button>
                             </Grid.Column>
                         </Accordion.Content>
                     </Menu.Item>
@@ -344,4 +365,4 @@ const AddCustomer = () => {
 
 }
 
-export default AddCustomer
+export default UpdateCustomer

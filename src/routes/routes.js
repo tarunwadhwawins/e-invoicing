@@ -21,6 +21,8 @@ import CustomerDetail from "../views/customerDetail/CustomerDetail";
 import CRM from "../views/crm/CRM";
 import CustomerList from "../views/customerList/CustomerList";
 import AddCustomer from "../views/addCustomer/AddCustomer";
+import UpdateCustomer from "../views/updateCustomer/UpdateCustomer";
+import UpdateInvoice from "../views/updateInvoice/UpdateInvoice";
 // import { env } from '../shared/functional/global-import/global-import';
 
 
@@ -34,21 +36,6 @@ const Routes = ()=>{
     </>
 
 }
-
-// path: `${env.PUBLIC_URL}/dashboard`,
-
-
-// const DashboardContainer = ({match})=>(
-//     <DashboardLayout>
-//         <Switch>
-//             <Route exact
-//              path={`${match.path}/profile`} component={Home}/>
-//             <Route exact path={`${match.path}/invoices`} component={Invoices}/>
-//             <Route exact path={`${match.path}/invoice`} component={Invoice}/>
-//             <Route exact path={`${match.path}/subscription`} component={Subscription}/>
-//         </Switch>
-//     </DashboardLayout>
-// )
 
 
 const DashboardContainer = ({match})=>(
@@ -72,6 +59,8 @@ const DashboardContainer = ({match})=>(
             <Route exact path={`${env.PUBLIC_URL}/dashboard/crm`} component={CRM}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/customer-list`} component={CustomerList}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/add-customer`} component={AddCustomer}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/update-customer`} component={UpdateCustomer}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/update-invoice`} component={UpdateInvoice}/>
         </Switch>
     </DashboardLayout>
 )

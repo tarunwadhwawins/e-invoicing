@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Grid, Header, Accordion, Menu, Form, Button, Table, Input, Select, Dropdown, Checkbox } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import './invoices.scss'
+import './UpdateInvoice.scss'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -90,7 +90,7 @@ const initialRows = [1];
 
 
 
-const Invoices = () => {
+const UpdateInvoice = () => {
     const [activeIndex, setActiveIndex] = useState(0)
 
     const [inputRows, setInputRows] = useState(initialRows)
@@ -139,7 +139,7 @@ const Invoices = () => {
     return (
         <Grid>
             <Grid.Column width={16}>
-                <Header as="h2">Create Invoice</Header>
+                <Header as="h2">Update Invoice</Header>
             </Grid.Column>
             <Grid.Column width={16}>
                 <Accordion as={Menu} vertical className="createInvoice">
@@ -505,7 +505,7 @@ const Invoices = () => {
                                     <Grid.Column width={16} textAlign="right">
                                         <Button className="btn-primary">Mark as Paid</Button>
                                         <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button>
-                                        <Button className="btn-secondary" as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice`}>Create Invoice</Button>
+                                        <Button className="btn-secondary" as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice`}>Update Invoice</Button>
                                     </Grid.Column>
                                 </Grid>
                             </Form>
@@ -521,4 +521,4 @@ const Invoices = () => {
 
 
 
-export default Invoices;
+export default UpdateInvoice;

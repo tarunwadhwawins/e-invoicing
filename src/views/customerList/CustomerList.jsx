@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Header, Table, Icon, Menu, Button } from 'semantic-ui-react'
+import { Grid, Header, Table, Icon, Menu, Button, List } from 'semantic-ui-react'
 import { env } from '../../shared/functional/global-import';
 import { Link } from 'react-router-dom'
 
@@ -10,7 +10,7 @@ const CustomerList = () => {
                 <Header as="h2">Customer List</Header>
             </Grid.Column>
             <Grid.Column width={8} textAlign="right">
-                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/add-customer`} className="btn-secondary"><Icon name="plus" />Add New Customer</Button>
+                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/add-customer`} className="btn-secondary"><Icon name="plus" />Add Customer</Button>
             </Grid.Column>
             <Grid.Column width={16}>
             <div className="commonTable">
@@ -18,8 +18,8 @@ const CustomerList = () => {
                         <Table.Header>
                             <Table.Row>
                                 <Table.HeaderCell>Customer Name <Icon name="sort" /></Table.HeaderCell>
-                                <Table.HeaderCell>Address </Table.HeaderCell>
-                                <Table.HeaderCell>Member Since</Table.HeaderCell>
+                                <Table.HeaderCell>Address <Icon name="sort" /></Table.HeaderCell>
+                                <Table.HeaderCell>Member Since <Icon name="sort" /></Table.HeaderCell>
                                 <Table.HeaderCell>Actions</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
@@ -30,9 +30,11 @@ const CustomerList = () => {
                                 <Table.Cell>Cecilia Chapman 711-2880 Nulla St.Mankato 96522</Table.Cell>
                                 <Table.Cell>Nov 20, 2021</Table.Cell>
                                 <Table.Cell>
-                                    <Icon name="plus" color="green" title="View" link />
-                                    <Icon name="edit outline" color="blue" title="Edit" link />
-                                    <Icon name="trash alternate outline" color="red" title="Delete" link />
+                                    <List horizontal>
+                                        <List.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/invoices`}><Icon name="plus" color="green" title="Add Invoice" link /></List.Item>
+                                        <List.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/update-customer`}><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
+                                        <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
+                                    </List>
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
@@ -40,9 +42,11 @@ const CustomerList = () => {
                                 <Table.Cell>Cecilia Chapman 711-2880 Nulla St.Mankato 96522</Table.Cell>
                                 <Table.Cell>Nov 20, 2021</Table.Cell>
                                 <Table.Cell>
-                                    <Icon name="plus" color="green" title="View" link />
-                                    <Icon name="edit outline" color="blue" title="Edit" link />
-                                    <Icon name="trash alternate outline" color="red" title="Delete" link />
+                                    <List horizontal>
+                                        <List.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/invoices`}><Icon name="plus" color="green" title="Add Invoice" link /></List.Item>
+                                        <List.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/update-customer`}><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
+                                        <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
+                                    </List>
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
@@ -50,9 +54,11 @@ const CustomerList = () => {
                                 <Table.Cell>Cecilia Chapman 711-2880 Nulla St.Mankato 96522</Table.Cell>
                                 <Table.Cell>Nov 20, 2021</Table.Cell>
                                 <Table.Cell>
-                                    <Icon name="plus" color="green" title="View" link />
-                                    <Icon name="edit outline" color="blue" title="Edit" link />
-                                    <Icon name="trash alternate outline" color="red" title="Delete" link />
+                                    <List horizontal>
+                                        <List.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/invoices`}><Icon name="plus" color="green" title="Add Invoice" link /></List.Item>
+                                        <List.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/update-customer`}><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
+                                        <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
+                                    </List>
                                 </Table.Cell>
                             </Table.Row>
                         </Table.Body>
