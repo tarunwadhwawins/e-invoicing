@@ -1,64 +1,70 @@
-import { Button, Grid, Icon, Table, Header, Menu, Form, Checkbox, List} from "semantic-ui-react"
+import React from 'react';
+import { Grid, Header, Form, Icon, Table, Label, Menu, List, Button, Checkbox } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
-import { env } from '../../shared/functional/global-import';
+import { env } from '../../shared/functional/global-import'; 
 
-const Agreement = () => {
 
+
+const RolePermissions = () => {
     return (
         <Grid>
-            <Grid.Column width={8} verticalAlign="middle">
-                <Header as="h2">Agreement</Header>
+            <Grid.Column width={4} verticalAlign="middle">
+                <Header as="h2">Roles & Permissions</Header>
             </Grid.Column>
-            <Grid.Column width={8} textAlign="right">
-                <Button as="a" target="_blank" href="https://youtu.be/2ZII3HOlIfA" className="btn-secondary">Create Agreement</Button>
-                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-primary">Back</Button>
-            </Grid.Column>
-            <Grid.Column width={8} textAlign="left">
+            <Grid.Column width={8}>
                 <Form.Input size="large" action={{ icon: 'search' }} placeholder='Search...' fluid />
+            </Grid.Column>
+            <Grid.Column width={4} verticalAlign="right">
+                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/custom-role`} className="btn-secondary">Custom Role</Button>
             </Grid.Column>
             <Grid.Column width={16}>
                 <div className="commonTable">
                     <Table singleLine>
                         <Table.Header>
                             <Table.Row>
-                                <Table.HeaderCell>Agreement Name <Icon name="sort" /></Table.HeaderCell>
-                                <Table.HeaderCell>Active/Inactive </Table.HeaderCell>
+                                <Table.HeaderCell>Role Name<Icon name="sort" /></Table.HeaderCell>
+                                <Table.HeaderCell>Type of Role  <Icon name="sort" /></Table.HeaderCell>
+                                <Table.HeaderCell>Description <Icon name="sort" /></Table.HeaderCell>
+                                <Table.HeaderCell>Active/Inactive <Icon name="sort" /></Table.HeaderCell>
                                 <Table.HeaderCell>Actions</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
 
                         <Table.Body>
                             <Table.Row>
-                                <Table.Cell>Agreement Four</Table.Cell>
+                                <Table.Cell><Link to="#">Billing Admin</Link></Table.Cell>
+                                <Table.Cell>Predefined</Table.Cell>
+                                <Table.Cell>Full System Access</Table.Cell>
                                 <Table.Cell><Checkbox toggle /></Table.Cell>
                                 <Table.Cell>
                                     <List horizontal>
-                                        <List.Item><Icon name="eye" color="black" title="View" link /></List.Item>
                                         <List.Item><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
                                         <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
-                                    </List>
+                                    </List> 
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell>Agreement Five</Table.Cell>
+                                <Table.Cell><Link to="#">Manager</Link></Table.Cell>
+                                <Table.Cell>Predefined</Table.Cell>
+                                <Table.Cell>Full System Access</Table.Cell>
                                 <Table.Cell><Checkbox toggle /></Table.Cell>
                                 <Table.Cell>
                                     <List horizontal>
-                                        <List.Item><Icon name="eye" color="black" title="View" link /></List.Item>
                                         <List.Item><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
                                         <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
-                                    </List>
+                                    </List> 
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell>Company Agreement</Table.Cell>
+                                <Table.Cell><Link to="#">User Admin</Link></Table.Cell>
+                                <Table.Cell>Predefined</Table.Cell>
+                                <Table.Cell>Full System Access</Table.Cell>
                                 <Table.Cell><Checkbox toggle /></Table.Cell>
                                 <Table.Cell>
                                     <List horizontal>
-                                        <List.Item><Icon name="eye" color="black" title="View" link /></List.Item>
-                                        <List.Item><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
+                                        <List.Item ><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
                                         <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
-                                    </List>
+                                    </List> 
                                 </Table.Cell>
                             </Table.Row>
                         </Table.Body>
@@ -83,12 +89,8 @@ const Agreement = () => {
                     </Table>
                 </div>
             </Grid.Column>
-            <Grid.Column width={16} textAlign="right">
-                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-secondary" >Save</Button>
-            </Grid.Column>
         </Grid>
-    )
+    );
+};
 
-}
-
-export default Agreement
+export default RolePermissions;

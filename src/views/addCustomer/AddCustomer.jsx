@@ -72,6 +72,8 @@ const countryOptions = [
 
 
 const panes = [
+  
+
     { menuItem: 'Bank', render: () => 
     <Tab.Pane>
         <Grid columns="3">
@@ -95,16 +97,25 @@ const panes = [
     </Tab.Pane> },
     { menuItem: 'Card', render: () => 
     <Tab.Pane>
-        <Grid columns="3">
-            <Grid.Column width="13">
-                <Form.Input placeholder="Card Number" fluid />
+         <Grid columns="3">
+            <Grid.Column width="10">
+                <h3>Card Number</h3>
+                <Form.Input placeholder="XXXX XXXX XXXX XXXX" fluid />
             </Grid.Column>
             <Grid.Column width="3">
+                <h3>Exp.</h3>
                 <Form.Input placeholder="MM/YY" fluid />
+            </Grid.Column>
+            <Grid.Column width="3">
+                <h3>CVC No.</h3>
+                <Form.Input placeholder="XXX" fluid />
+            </Grid.Column>
+            <Grid.Column width={16} className="rightAlign">
+                <Button className="btn-secondary"><Icon name="plus" />Add Card</Button>
             </Grid.Column>
         </Grid>
     </Tab.Pane> },
-  ]
+]
   
 
   
@@ -176,22 +187,31 @@ const AddCustomer = () => {
                     </Menu.Item>
 
                     <Menu.Item>
+                    {isCompany ?
+                            <Accordion.Title
+                            active={activeIndex === 1}
+                            content='Company Name'
+                            index={1}
+                            onClick={handleClick}
+                        /> :
                         <Accordion.Title
                             active={activeIndex === 1}
                             content='Individual Name'
                             index={1}
                             onClick={handleClick}
                         />
+
+                        }
                         <Accordion.Content
                             active={activeIndex === 1}
                         >
                             <Form size="large">
                                 <Grid columns="3">
                                     <Grid.Column width={8}>
-                                        <Form.Input placeholder="Customer Number" fluid />                                        
+                                        <Form.Input placeholder="Customer Name" fluid />                                        
                                     </Grid.Column>
                                     <Grid.Column width={8}>
-                                        <Form.Input placeholder="Merchant ID" fluid />
+                                        <Form.Input placeholder=" Customer Number" fluid />
                                     </Grid.Column>
                                     <Grid.Column width={16} textAlign="right">
                                         <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>Next</Button>
@@ -271,7 +291,12 @@ const AddCustomer = () => {
                             active={activeIndex === 3}
                         >
                             <Form size="large">
-                                <Grid columns="3">                                    
+                                <Grid columns="3">
+                                    <Grid.Column width={16}>
+                                        <Form.Group>  
+                                            <Form.Checkbox label='Same as billing address.' />
+                                        </Form.Group>
+                                    </Grid.Column>                                    
                                     <Grid.Column>
                                         <Form.Input placeholder="First Name" fluid />
                                     </Grid.Column>
@@ -330,7 +355,6 @@ const AddCustomer = () => {
                                  <Tab menu={{ text: true }} panes={panes} />                                 
                             </Grid.Column>
                             <Grid.Column width={16} textAlign="right" className="rightAlign">
-                                {/* <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button> */}
                                 <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>save</Button>
                             </Grid.Column>
                         </Accordion.Content>

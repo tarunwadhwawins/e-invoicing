@@ -5,6 +5,9 @@ import Catalogue from "../../assets/images/catalogue.svg"
 import Agreement from "../../assets/images/agreement.svg"
 import Team from "../../assets/images/team.svg"
 import Subscription from "../../assets/images/subscription-plan.svg"
+import Permissions from "../../assets/images/permissions.png"
+import Template from "../../assets/images/template.png"
+import Reports from "../../assets/images/reports.png"
 import "./home.scss"
 import { Link } from 'react-router-dom'
 import { env } from '../../shared/functional/global-import';
@@ -47,6 +50,24 @@ const Home = () => {
                     <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/subscription-plan`}>
                         <Image src={Subscription} />
                         <Header as="h3">Subscription Plan</Header>
+                    </Link>
+                </Grid.Column>
+                <Grid.Column>
+                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/role-permissions`} >
+                        <Image src={Permissions} />
+                        <Header as="h3">Roles and permissions</Header>
+                    </Link>
+                </Grid.Column>
+                <Grid.Column>
+                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/invoice-template-1`} >
+                        <Image src={Template} />
+                        <Header as="h3">Invoice Template</Header>
+                    </Link>
+                </Grid.Column>
+                <Grid.Column>
+                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/reports`}>
+                        <Image src={Reports} />
+                        <Header as="h3">Reports</Header>
                     </Link>
                 </Grid.Column>
             </Grid>

@@ -23,6 +23,12 @@ import CustomerList from "../views/customerList/CustomerList";
 import AddCustomer from "../views/addCustomer/AddCustomer";
 import UpdateCustomer from "../views/updateCustomer/UpdateCustomer";
 import UpdateInvoice from "../views/updateInvoice/UpdateInvoice";
+import RolePermissions from "../views/rolePermissions/RolePermissions";
+import CustomRole from "../views/customRole/CustomRole";
+import Reports from "../views/reports/Reports";
+import InvoiceTemplate from "../views/invoiceTemplate/InvoiceTemplate";
+import EditInvoiceTemplate from "../views/editInvoiceTemplate/EditInvoiceTemplate";
+import InvoiceTemplate1 from "../views/invoiceTemplate1/InvoiceTemplate1";
 // import { env } from '../shared/functional/global-import/global-import';
 
 
@@ -61,6 +67,12 @@ const DashboardContainer = ({match})=>(
             <Route exact path={`${env.PUBLIC_URL}/dashboard/add-customer`} component={AddCustomer}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/update-customer`} component={UpdateCustomer}/>
             <Route exact path={`${env.PUBLIC_URL}/dashboard/update-invoice`} component={UpdateInvoice}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/role-permissions`} component={RolePermissions}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/custom-role`} component={CustomRole}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/reports`} component={Reports}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/invoice-template`} component={InvoiceTemplate}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/edit-invoice-template`} component={EditInvoiceTemplate}/>
+            <Route exact path={`${env.PUBLIC_URL}/dashboard/invoice-template-1`} component={InvoiceTemplate1}/>
         </Switch>
     </DashboardLayout>
 )
