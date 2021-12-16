@@ -129,7 +129,6 @@ p {
     margin-bottom: 5px;
 }
 .tabSection{
-    margin-bottom: 30px;
     .ui{
         &.text.menu{
             margin: 0;
@@ -226,9 +225,19 @@ p {
 .removeM{
     margin: 0 !important;
 }
-h2.ui.header.detailCaption{
+.removeP{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+h3.ui.header.detailCaption{
     background-color: #2485b1;
     color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+h3.ui.header.detailCaptions {
+    background-color: #d9d8d8de;
+    color: #000000;
     padding: 8px 15px;
     border-radius: 5px;
 }
@@ -242,10 +251,29 @@ h2.ui.header.detailCaption{
 tempList img.ui.image {
     width: 30px;
 }
+.tempInvoiceDetails{
+    text-align: right;
+}
+.tempInvoiceDetails h4{
+    margin: 5px 0 !important;
+}
 .tempList {
     background-color: #fff;
     padding: 12px 15px;
 }
 .tempList a.ui.header {
     font-size: 14px !important;
+}
+.subscriptionToggle {
+    display: flex;
+    align-items: center;
+}
+.modalDescription{
+    flex: auto !important;
+}
+.subscriptionToggle span.planInactiveStatus {
+    margin-right: 10px;
+}
+.subscriptionToggle span.planActiveStatus {
+    margin-left: 10px;
 }

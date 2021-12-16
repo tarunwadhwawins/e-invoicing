@@ -41,12 +41,7 @@ const taxOptions = [
     { key: 'Percentage', value: 'Percentage', text: ' Percentage' },
     { key: 'Flat', value: 'Flat', text: ' Flat' },
 ]
-const stateOptions = [
-    { key: 'In Retail', value: 'In Retail', text: ' In Retail' },
-    { key: 'By activity in bookings', value: 'By activity in bookings', text: ' By activity in bookings' },
-    { key: 'By custom time frame ', value: 'By custom time frame ', text: ' By custom time frame ' },
-    { key: 'By location', value: 'By location', text: ' By location' },
-]
+
 const currencyOptions = [
     { key: 'United States dollar (USD)', value: 'United States dollar (USD)', text: ' United States dollar (USD)' },
     { key: 'Canadian dollar (CAD)', value: 'Canadian dollar (CAD)', text: ' Canadian dollar (CAD)' },
@@ -126,21 +121,27 @@ const Reports = () => {
 
     return (
         <Grid>
-            <Grid.Column width={16}>
+            <Grid.Column width={8}>
                 <Header as="h2">Reports</Header>
+            </Grid.Column>
+            <Grid.Column width={8} verticalAlign="right">
+                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-primary">Back</Button>
             </Grid.Column>
             <Grid.Column width={16}>
                 <Accordion as={Menu} vertical className="createInvoice">
                     <Form size="large" className="reportCol">
                         <Grid columns="3">                                    
                             <Grid.Column>
-                                <Form.Select placeholder="10/01/21" options={countryOptions} fluid />
+                                <Header as="h3">Report Name</Header>
+                                <Form.Input placeholder="Report Name" fluid />
                             </Grid.Column>
                             <Grid.Column>
-                                <DatePicker onChange={(date) => setStartDate(date)} placeholderText="Due Date" />
+                                <Header as="h3">Start Date</Header>
+                                <DatePicker onChange={(date) => setStartDate(date)} placeholderText="Start Date" />
                             </Grid.Column>
                             <Grid.Column>
-                                <Form.Select placeholder="Reports" options={stateOptions} fluid />
+                                <Header as="h3">End Date</Header>
+                                <DatePicker onChange={(date) => setStartDate(date)} placeholderText="End Date" />
                             </Grid.Column>
                                     
                                     

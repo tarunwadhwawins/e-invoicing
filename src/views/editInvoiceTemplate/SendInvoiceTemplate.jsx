@@ -33,15 +33,15 @@ const panes = [
     <Tab.Pane>
          <Grid columns="3">
             <Grid.Column width="10">
-                <h3>Card Number</h3>
+                <h4>Card Number</h4>
                 <Form.Input placeholder="XXXX XXXX XXXX XXXX" fluid />
             </Grid.Column>
-            <Grid.Column width="3">
-                <h3>Exp.</h3>
+            <Grid.Column width="6">
+                <h4>Exp.</h4>
                 <Form.Input placeholder="MM/YY" fluid />
             </Grid.Column>
-            <Grid.Column width="3">
-                <h3>CVC No.</h3>
+            <Grid.Column width="6">
+                <h4>CVC No.</h4>
                 <Form.Input placeholder="XXX" fluid />
             </Grid.Column>
         </Grid>
@@ -63,7 +63,7 @@ const EditInvoiceTemplate = () => {
         <Grid>  
             <Grid.Column width={16}>
                 <Grid>
-                    <Grid.Column width={16} className="tempInvoiceDetail">
+                    <Grid.Column width={10} className="tempInvoiceDetail">
                         <Grid>
                             <Grid.Column width={8} className="tempInvoiceDetail">
                                 <Image src={Logo} size="small"/>
@@ -200,19 +200,19 @@ const EditInvoiceTemplate = () => {
                             <Grid.Column width={6} className="removeP">
                                 <p>Contact us admin@gmail.com</p>
                             </Grid.Column>                            
-                            <Grid.Column width={16} textAlign="right">
+                            {/* <Grid.Column width={16} textAlign="right">
                                 <Button className="btn-secondary" as={Link} to={`${env.PUBLIC_URL}/dashboard/send-invoice`}><Icon name="send" />Send Invoice</Button>
-                            </Grid.Column>
+                            </Grid.Column> */}
                         </Grid>
                     </Grid.Column>
                     
                     
-                    {/* <Grid.Column width={6} className="templateCardPayment">
+                    <Grid.Column width={6} className="templateCardPayment">
                         <Grid>
-                            <Grid.Column width={13} className="tabSection">
-                                <Header as="h1">Your Payment Information</Header>
+                            <Grid.Column width={10} className="tabSection">
+                                <Header as="h3">Your Payment Information</Header>
                             </Grid.Column>
-                            <Grid.Column width={3} className="tabSection" textAlign="right">
+                            <Grid.Column width={6} className="tabSection" textAlign="right">
                                 <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/invoice-template`} className="btn-primary">Back</Button>
                             </Grid.Column>
                             
@@ -223,7 +223,7 @@ const EditInvoiceTemplate = () => {
                                 <Button className="btn-secondary">Save</Button>
                             </Grid.Column>
                         </Grid>                        
-                    </Grid.Column> */}
+                    </Grid.Column>
                 </Grid>                
             </Grid.Column>   
 

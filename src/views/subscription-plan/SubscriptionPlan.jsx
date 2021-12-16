@@ -1,10 +1,16 @@
 import React from 'react'
-import { Grid, Button, Form, Header, Icon, Table, Label, Dropdown, Popup } from "semantic-ui-react"
+import { Grid, Button, Form, Header, Icon, Table, Label, List, Popup } from "semantic-ui-react"
 import { Link } from 'react-router-dom'
 import { env } from '../../shared/functional/global-import';
-
+import  SubscriptionModal from '../modal/SubscriptionModal';
 
 const SubscriptionPlan = () => {
+    const [openModal, setOpenModal] = React.useState(false)
+
+    const closeSubscriptionModal=()=>{
+        setOpenModal(!openModal)
+    }
+    
     return (
         <Form size='large'>
             <Grid>
@@ -37,8 +43,11 @@ const SubscriptionPlan = () => {
                                     <Table.Cell>Feb 10, 2021</Table.Cell>
                                     <Table.Cell><Label color="blue">Active</Label></Table.Cell>
                                     <Table.Cell>
-                                        <Icon name="redo" color="blue" title="Renew Plan" link />
-                                        <Icon name="plus" color="green" title="Upgrade Plan" link />
+                                        <List horizontal>
+                                            <List.Item><Icon name="redo" color="blue" title="Renew Plan" link /></List.Item>
+                                            <List.Item><Icon onClick={closeSubscriptionModal} name="plus" color="green" title="Upgrade Plan" link /></List.Item>
+                                        </List>                                         
+                                        
                                     </Table.Cell>
                                 </Table.Row>
                             </Table.Body>
@@ -49,6 +58,7 @@ const SubscriptionPlan = () => {
                     <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-secondary" >Save</Button>
                 </Grid.Column>
             </Grid>
+            <SubscriptionModal openModal={openModal} closeModal={closeSubscriptionModal}/>
         </Form>
     )
 }

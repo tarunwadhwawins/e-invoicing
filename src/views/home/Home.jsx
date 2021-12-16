@@ -59,7 +59,7 @@ const Home = () => {
                     </Link>
                 </Grid.Column>
                 <Grid.Column>
-                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/invoice-template-1`} >
+                    <Link className="settingBox" to={`${env.PUBLIC_URL}/dashboard/invoice-template-list`} >
                         <Image src={Template} />
                         <Header as="h3">Invoice Template</Header>
                     </Link>

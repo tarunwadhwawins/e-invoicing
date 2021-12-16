@@ -11,10 +11,11 @@ const RolePermissions = () => {
             <Grid.Column width={4} verticalAlign="middle">
                 <Header as="h2">Roles & Permissions</Header>
             </Grid.Column>
-            <Grid.Column width={8}>
+            <Grid.Column width={6}>
                 <Form.Input size="large" action={{ icon: 'search' }} placeholder='Search...' fluid />
             </Grid.Column>
-            <Grid.Column width={4} verticalAlign="right">
+            <Grid.Column width={6} verticalAlign="right">
+                <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-primary">Back</Button>
                 <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/custom-role`} className="btn-secondary">Custom Role</Button>
             </Grid.Column>
             <Grid.Column width={16}>
@@ -32,37 +33,37 @@ const RolePermissions = () => {
 
                         <Table.Body>
                             <Table.Row>
-                                <Table.Cell><Link to="#">Billing Admin</Link></Table.Cell>
+                                <Table.Cell><Link to="#">Business Admin</Link></Table.Cell>
                                 <Table.Cell>Predefined</Table.Cell>
                                 <Table.Cell>Full System Access</Table.Cell>
                                 <Table.Cell><Checkbox toggle /></Table.Cell>
                                 <Table.Cell>
                                     <List horizontal>
-                                        <List.Item><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
+                                        <List.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/update-custom-role`}><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
                                         <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
                                     </List> 
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell><Link to="#">Manager</Link></Table.Cell>
+                                <Table.Cell><Link to="#">Business Staff</Link></Table.Cell>
                                 <Table.Cell>Predefined</Table.Cell>
                                 <Table.Cell>Full System Access</Table.Cell>
                                 <Table.Cell><Checkbox toggle /></Table.Cell>
                                 <Table.Cell>
                                     <List horizontal>
-                                        <List.Item><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
+                                        <List.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/update-custom-role`}><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
                                         <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
                                     </List> 
                                 </Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.Cell><Link to="#">User Admin</Link></Table.Cell>
+                                <Table.Cell><Link to="#">Accounting & book keeping</Link></Table.Cell>
                                 <Table.Cell>Predefined</Table.Cell>
                                 <Table.Cell>Full System Access</Table.Cell>
                                 <Table.Cell><Checkbox toggle /></Table.Cell>
                                 <Table.Cell>
                                     <List horizontal>
-                                        <List.Item ><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
+                                        <List.Item as={Link} to={`${env.PUBLIC_URL}/dashboard/update-custom-role`}><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
                                         <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
                                     </List> 
                                 </Table.Cell>

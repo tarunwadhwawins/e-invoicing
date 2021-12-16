@@ -2,9 +2,17 @@ import React from 'react'
 import { Grid, Button, Form, Header, Icon, Table, Menu, Dropdown } from "semantic-ui-react"
 import { Link } from 'react-router-dom'
 import { env } from '../../shared/functional/global-import';
+import  CatalogueModal from '../modal/CatalogueModal';
 
 
 const Catalogue = () => {
+
+    const [openModal, setOpenModal] = React.useState(false)
+
+    const closeCatalogueModal=()=>{
+        setOpenModal(!openModal)
+    }
+
     return (
         <Form size='large'>
             <Grid>
@@ -46,7 +54,7 @@ const Catalogue = () => {
                                     <Table.Cell> Lorem ipsum dolor sit amet consectetur. </Table.Cell>
                                     <Table.Cell>$20.00</Table.Cell>
                                     <Table.Cell>
-                                        <Icon name="edit outline" color="blue" title="Edit" link />
+                                        <Icon onClick={closeCatalogueModal} name="edit outline" color="blue" title="Edit" link />
                                         <Icon name="trash alternate outline" color="red" title="Delete" link />
                                     </Table.Cell>
                                 </Table.Row>
@@ -55,7 +63,7 @@ const Catalogue = () => {
                                     <Table.Cell> Lorem ipsum dolor sit amet consectetur. </Table.Cell>
                                     <Table.Cell>$15.00</Table.Cell>
                                     <Table.Cell>
-                                        <Icon name="edit outline" color="blue" title="Edit" link />
+                                        <Icon onClick={closeCatalogueModal} name="edit outline" color="blue" title="Edit" link />
                                         <Icon name="trash alternate outline" color="red" title="Delete" link />
                                     </Table.Cell>
                                 </Table.Row>
@@ -64,7 +72,7 @@ const Catalogue = () => {
                                     <Table.Cell> Lorem ipsum dolor sit amet consectetur. </Table.Cell>
                                     <Table.Cell>$15.00</Table.Cell>
                                     <Table.Cell>
-                                        <Icon name="edit outline" color="blue" title="Edit" link />
+                                        <Icon onClick={closeCatalogueModal} name="edit outline" color="blue" title="Edit" link />
                                         <Icon name="trash alternate outline" color="red" title="Delete" link />
                                     </Table.Cell>
                                 </Table.Row>
@@ -94,6 +102,7 @@ const Catalogue = () => {
                     <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/profile`} className="btn-secondary" >Save</Button>
                 </Grid.Column>
             </Grid>
+            <CatalogueModal openModal={openModal} closeModal={closeCatalogueModal}/>
         </Form>
     )
 }

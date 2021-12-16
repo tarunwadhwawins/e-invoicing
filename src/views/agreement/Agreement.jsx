@@ -57,7 +57,6 @@ const Agreement = () => {
                                     <List horizontal>
                                         <List.Item><Icon name="eye" color="black" title="View" link /></List.Item>
                                         <List.Item><Icon name="edit outline" color="blue" title="Edit" link /></List.Item>
-                                        <List.Item><Icon name="trash alternate outline" color="red" title="Delete" link /></List.Item>
                                     </List>
                                 </Table.Cell>
                             </Table.Row>

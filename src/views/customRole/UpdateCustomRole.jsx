@@ -122,7 +122,7 @@ const panes = [
 const initialRows = [1];
 
 
-const CustomRole = () => {
+const UpdateCustomRole = () => {
 
     const [activeIndex, setActiveIndex] = useState(0)
 
@@ -173,7 +173,7 @@ const CustomRole = () => {
     return ( 
         <Grid>
             <Grid.Column width={8} verticalAlign="middle">
-                <Header as="h2">Create New Role</Header>
+                <Header as="h2">Update Role</Header>
             </Grid.Column>
             <Grid.Column width={8} verticalAlign="right">
                 <Button as={Link} to={`${env.PUBLIC_URL}/dashboard/role-permissions`} className="btn-primary">Back</Button>
@@ -288,4 +288,4 @@ const CustomRole = () => {
 
 }
 
-export default CustomRole
+export default UpdateCustomRole

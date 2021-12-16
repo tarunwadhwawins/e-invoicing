@@ -90,7 +90,7 @@ const initialRows = [1];
 
 
 
-const UpdateInvoice = () => {
+const CopyInvoice = () => {
     const [activeIndex, setActiveIndex] = useState(0)
 
     const [inputRows, setInputRows] = useState(initialRows)
@@ -139,7 +139,7 @@ const UpdateInvoice = () => {
     return (
         <Grid>
             <Grid.Column width={16}>
-                <Header as="h2">Update Invoice</Header>
+                <Header as="h2">Copy of Invoice</Header>
             </Grid.Column>
             <Grid.Column width={16}>
                 <Accordion as={Menu} vertical className="createInvoice">
@@ -521,4 +521,4 @@ const UpdateInvoice = () => {
 
 
 
-export default UpdateInvoice;
+export default CopyInvoice;

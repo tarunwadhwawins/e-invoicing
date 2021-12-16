@@ -265,7 +265,6 @@ const BusinessProfile = () => {
                                     <Form.Input placeholder="Fax" fluid />
                                 </Grid.Column>
                                 <Grid.Column width={16} textAlign="right">
-                                    <Button className="btn-primary" onClick={() => setActiveIndex(activeIndex - 1)}>Prev</Button>
                                     <Button className="btn-secondary" onClick={() => setActiveIndex(activeIndex + 1)}>Save</Button>
                                 </Grid.Column>
                             </Grid>
