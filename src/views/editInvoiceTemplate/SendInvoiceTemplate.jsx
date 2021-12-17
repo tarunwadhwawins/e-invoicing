@@ -50,8 +50,8 @@ const panes = [
     <Tab.Pane>
     <Grid columns="3">
        <Grid.Column width="16">
-           <h3>Email ID</h3>
-           <Form.Input placeholder="Enter Email" fluid />
+            <h3>Please mail a check to the following address:</h3>
+           <p>GARDNER  GARDNER <br/>MISSION BEACH RENTALS <br/>3136 MISSION BLVD <br/>SAN DIEGO, CA 92109</p>
        </Grid.Column>
    </Grid>
 </Tab.Pane> },

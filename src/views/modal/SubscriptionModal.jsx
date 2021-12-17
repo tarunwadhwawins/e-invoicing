@@ -19,7 +19,6 @@ function SubscriptionModal(props) {
   return (
     <Modal
     open={props.openModal}
-    closeIcon
     onClose={props.closeModal}
     size={"small"}
     >
